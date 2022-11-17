@@ -3,6 +3,18 @@
 @tailwind utilities;
 
 @layer components {
+  .title {
+    @apply text-4xl font-semibold text-darkBlue md:text-5xl;
+  }
+
+  .body {
+    @apply text-base text-darkBlue xl:text-lg;
+  }
+
+  .m-horizontal {
+    @apply mx-5 max-w-[680px] xs:mx-9 md:mx-auto;
+  }
+
   .transition-300 {
     @apply duration-300 ease-in-out;
   }

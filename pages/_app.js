@@ -12,7 +12,9 @@ function MyApp({ Component, pageProps }) {
           <div className="absolute top-[50%] -left-[80vw] h-[600px] w-[600px] rounded-full border border-lightBlue border-opacity-10 xs:-left-[30vw] md:-right-[30%] md:top-[30%] md:left-auto md:h-[75vw] md:w-[75vw]" />
         </div>
         <Header />
-        <Component {...pageProps} />
+        <div className="pb-16 md:pb-24">
+          <Component {...pageProps} />
+        </div>
       </>
     </ProgressContextProvider>
   );
