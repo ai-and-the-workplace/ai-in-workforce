@@ -1,9 +1,9 @@
 import { useContext } from 'react';
-import StageContext from '../store/stage';
+import ProgressContext from '../store/progress';
 import Landing from '../components/stages/Landing';
 
 export default function Home() {
-  const stageContext = useContext(StageContext);
+  const progressContext = useContext(ProgressContext);
 
-  return <>{stageContext.stage === 'landing' && <Landing />}</>;
+  return <>{progressContext.progress.stage === 'landing' && <Landing />}</>;
 }

@@ -1,11 +1,10 @@
 import { useContext } from 'react';
-import Image from 'next/image';
-import StageContext from '../../store/stage';
+import ProgressContext from '../../store/progress';
 import Button from '../UI/Button';
 import rightChevron from '../../public/icons/right-chevron.svg';
 
 export default function Landing() {
-  const stageContext = useContext(StageContext);
+  const progressContext = useContext(ProgressContext);
 
   return (
     <div className="absolute inset-0">
@@ -25,14 +24,8 @@ export default function Landing() {
             px="pl-8 pr-6"
             py="py-4.5"
             borderRadius="rounded-full"
-            icon={
-              <Image
-                src={rightChevron}
-                alt="right chevron"
-                className="absolute right-4 top-1/2 -translate-y-1/2 md:relative md:top-0 md:right-0 md:translate-y-0"
-              />
-            }
-            onClick={() => stageContext.changeStage('introduction)')}
+            icon={rightChevron}
+            onClick={() => progressContext.changeStage('introduction)')}
           >
             Get Started
           </Button>
@@ -46,14 +39,8 @@ export default function Landing() {
           borderRadius="rounded-full"
           showArrow={true}
           mobileFullWidth={true}
-          icon={
-            <Image
-              src={rightChevron}
-              alt="right chevron"
-              className="absolute right-4 top-1/2 -translate-y-1/2 md:relative md:top-0 md:right-0 md:translate-y-0"
-            />
-          }
-          onClick={() => stageContext.changeStage('introduction)')}
+          icon={rightChevron}
+          onClick={() => progressContext.changeStage('introduction)')}
         >
           Get Started
         </Button>
