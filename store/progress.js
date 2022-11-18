@@ -5,12 +5,12 @@ const ProgressContext = createContext();
 export const ProgressContextProvider = ({ children }) => {
   const [progress, setProgress] = useState({ screen: 'landing' });
 
-  function changescreen(newscreen) {
+  function changeScreen(newscreen) {
     setProgress({ ...progress, screen: newscreen });
   }
 
   return (
-    <ProgressContext.Provider value={{ progress, changescreen }}>
+    <ProgressContext.Provider value={{ progress, changeScreen }}>
       {children}
     </ProgressContext.Provider>
   );

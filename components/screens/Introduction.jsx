@@ -1,7 +1,6 @@
 import { useContext } from 'react';
 import ProgressContext from '../../store/progress';
-import Button from '../UI/Button';
-import rightChevron from '../../public/icons/right-chevron.svg';
+import { ContinueButton } from '../UI/Button';
 
 const TEXT = [
   "The following study is conducted by researchers from the University of Toronto in Canada. We are interested in how people's behavior in workplace settings.",
@@ -17,24 +16,14 @@ export default function Introduction() {
       <h1 className="title mb-6">Introduction</h1>
       <div>
         {TEXT.map((text, i) => (
-          <p className="body mb-4.5 last:mb-14" key={`text-${i}`}>
+          <p className="body mb-4.5 last:mb-14 md:mb-5" key={`text-${i}`}>
             {text}
           </p>
         ))}
       </div>
-      <Button
-        hierarchy="primary"
-        font="text-base text-lg xl:text-xl"
-        py="py-3 md:py-3.5"
-        px="md:pl-8 md:pr-6"
-        borderRadius="rounded-full"
-        showArrow={true}
-        mobileFullWidth={true}
-        icon={rightChevron}
-        onClick={() => progressContext.changescreen('consent')}
-      >
+      <ContinueButton onClick={() => progressContext.changeScreen('consent')}>
         Continue
-      </Button>
+      </ContinueButton>
     </div>
   );
 }

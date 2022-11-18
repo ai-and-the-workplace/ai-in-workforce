@@ -25,7 +25,7 @@ export default function Landing() {
             py="py-4.5"
             borderRadius="rounded-full"
             icon={rightChevron}
-            onClick={() => progressContext.changescreen('introduction')}
+            onClick={() => progressContext.changeScreen('introduction')}
           >
             Get Started
           </Button>
@@ -40,7 +40,7 @@ export default function Landing() {
           showArrow={true}
           mobileFullWidth={true}
           icon={rightChevron}
-          onClick={() => progressContext.changescreen('introduction')}
+          onClick={() => progressContext.changeScreen('introduction')}
         >
           Get Started
         </Button>

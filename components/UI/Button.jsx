@@ -1,4 +1,24 @@
 import Image from 'next/image';
+import rightChevron from '../../public/icons/right-chevron.svg';
+
+export function ContinueButton({ onClick, disabled = false, children }) {
+  return (
+    <Button
+      hierarchy="primary"
+      font="text-base text-lg xl:text-xl"
+      py="py-3 md:py-3.5"
+      px="md:pl-8 md:pr-6"
+      borderRadius="rounded-full"
+      showArrow={true}
+      mobileFullWidth={true}
+      icon={rightChevron}
+      disabled={disabled}
+      onClick={onClick}
+    >
+      {children}
+    </Button>
+  );
+}
 
 export default function Button({
   hierarchy,
@@ -9,11 +29,12 @@ export default function Button({
   icon,
   mobileFullWidth,
   onClick,
+  disabled = false,
   children,
 }) {
   return (
     <div
-      className={`transition-300 relative cursor-pointer gap-2 hover:-translate-y-1 
+      className={`relative gap-2 
                 ${
                   hierarchy === 'primary'
                     ? 'bg-gradient-to-r from-darkBlue to-lightBlue'
@@ -24,8 +45,17 @@ export default function Button({
                   mobileFullWidth
                     ? 'inline-block w-full text-center md:inline-flex md:w-auto'
                     : 'inline-flex'
+                }
+                ${
+                  disabled
+                    ? 'opacity-60'
+                    : 'transition-300 cursor-pointer hover:-translate-y-0.5'
                 }`}
-      onClick={onClick}
+      onClick={() => {
+        if (!disabled) {
+          onClick();
+        }
+      }}
     >
       <p
         className={`${hierarchy === 'primary' ? 'text-white' : 'text-darkBlue'} 
