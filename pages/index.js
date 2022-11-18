@@ -7,6 +7,7 @@ import Instructions from '../components/screens/Instructions';
 import Demographics from '../components/screens/Demographics';
 import Attitudes from '../components/screens/Attitudes';
 import WorkplaceTasks from '../components/screens/WorkplaceTasks';
+import TaskSelection from '../components/screens/TaskSelection';
 
 export default function Home() {
   const progressContext = useContext(ProgressContext);
@@ -21,6 +22,9 @@ export default function Home() {
       {progressContext.progress.screen === 'attitudes' && <Attitudes />}
       {progressContext.progress.screen === 'workplace tasks' && (
         <WorkplaceTasks />
+      )}
+      {progressContext.progress.screen === 'task selection' && (
+        <TaskSelection />
       )}
     </>
   );
