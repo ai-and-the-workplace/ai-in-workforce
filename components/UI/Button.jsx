@@ -51,11 +51,7 @@ export default function Button({
                     ? 'opacity-60'
                     : 'transition-300 cursor-pointer hover:-translate-y-0.5'
                 }`}
-      onClick={() => {
-        if (!disabled) {
-          onClick();
-        }
-      }}
+      onClick={!disabled ? onClick : () => {}}
     >
       <p
         className={`${hierarchy === 'primary' ? 'text-white' : 'text-darkBlue'} 
@@ -63,16 +59,18 @@ export default function Button({
       >
         {children}
       </p>
-      <Image
-        src={icon}
-        alt="icon"
-        className={`w-6
+      {icon && (
+        <Image
+          src={icon}
+          alt="icon"
+          className={`w-6
                   ${
                     mobileFullWidth
                       ? 'absolute right-4 top-1/2 -translate-y-1/2 md:relative md:top-0 md:right-0 md:translate-y-0 '
                       : 'relative'
                   }`}
-      />
+        />
+      )}
     </div>
   );
 }

@@ -8,6 +8,7 @@ import Demographics from '../components/screens/Demographics';
 import Attitudes from '../components/screens/Attitudes';
 import WorkplaceTasks from '../components/screens/WorkplaceTasks';
 import TaskSelection from '../components/screens/TaskSelection';
+import Modal from '../components/UI/Modal';
 
 export default function Home() {
   const progressContext = useContext(ProgressContext);
@@ -26,6 +27,7 @@ export default function Home() {
       {progressContext.progress.screen === 'task selection' && (
         <TaskSelection />
       )}
+      <Modal />
     </>
   );
 }

@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { useContext } from 'react';
 import ProgressContext from '../../store/progress';
+import ModalContext from '../../store/modal';
 import summarizingText from '../../public/icons/summarizing-text.png';
 import socialMediaContentGenerator from '../../public/icons/social-media-content-generator.png';
 import copywriting from '../../public/icons/copywriting.png';
@@ -11,33 +12,34 @@ import helpIcon from '../../public/icons/help.svg';
 const TASKS = [
   {
     title: 'Summarizing Text',
-    info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed viverra sodales metus, sit amet aliquam dolor consequat et. Mauris vel odio eget eros sodales rhoncus. Duis vestibulum, metus vitae placerat scelerisque, justo justo volutpat massa, at scelerisque nisi eros imperdiet justo.',
+    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed viverra sodales metus, sit amet aliquam dolor consequat et. Mauris vel odio eget eros sodales rhoncus. Duis vestibulum, metus vitae placerat scelerisque, justo justo volutpat massa, at scelerisque nisi eros imperdiet justo.',
     icon: summarizingText,
   },
   {
     title: 'Social Media Content Generator',
-    info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed viverra sodales metus, sit amet aliquam dolor consequat et. Mauris vel odio eget eros sodales rhoncus. Duis vestibulum, metus vitae placerat scelerisque, justo justo volutpat massa, at scelerisque nisi eros imperdiet justo.',
+    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed viverra sodales metus, sit amet aliquam dolor consequat et. Mauris vel odio eget eros sodales rhoncus. Duis vestibulum, metus vitae placerat scelerisque, justo justo volutpat massa, at scelerisque nisi eros imperdiet justo.',
     icon: socialMediaContentGenerator,
   },
   {
     title: 'Copywriting',
-    info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed viverra sodales metus, sit amet aliquam dolor consequat et. Mauris vel odio eget eros sodales rhoncus. Duis vestibulum, metus vitae placerat scelerisque, justo justo volutpat massa, at scelerisque nisi eros imperdiet justo.',
+    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed viverra sodales metus, sit amet aliquam dolor consequat et. Mauris vel odio eget eros sodales rhoncus. Duis vestibulum, metus vitae placerat scelerisque, justo justo volutpat massa, at scelerisque nisi eros imperdiet justo.',
     icon: copywriting,
   },
   {
     title: 'Captioning Content',
-    info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed viverra sodales metus, sit amet aliquam dolor consequat et. Mauris vel odio eget eros sodales rhoncus. Duis vestibulum, metus vitae placerat scelerisque, justo justo volutpat massa, at scelerisque nisi eros imperdiet justo.',
+    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed viverra sodales metus, sit amet aliquam dolor consequat et. Mauris vel odio eget eros sodales rhoncus. Duis vestibulum, metus vitae placerat scelerisque, justo justo volutpat massa, at scelerisque nisi eros imperdiet justo.',
     icon: captioningContent,
   },
   {
     title: 'Creating Text From Bullet Points',
-    info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed viverra sodales metus, sit amet aliquam dolor consequat et. Mauris vel odio eget eros sodales rhoncus. Duis vestibulum, metus vitae placerat scelerisque, justo justo volutpat massa, at scelerisque nisi eros imperdiet justo.',
+    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed viverra sodales metus, sit amet aliquam dolor consequat et. Mauris vel odio eget eros sodales rhoncus. Duis vestibulum, metus vitae placerat scelerisque, justo justo volutpat massa, at scelerisque nisi eros imperdiet justo.',
     icon: creatingTextFromBulletPoints,
   },
 ];
 
 export default function TaskSelection() {
   const progressContext = useContext(ProgressContext);
+  const modalContext = useContext(ModalContext);
 
   return (
     <div className="m-horizontal">
@@ -46,10 +48,14 @@ export default function TaskSelection() {
         Choose a task to complete. You will need to complete all 5 tasks.
       </p>
       <div className="mb-5 flex h-1 justify-start rounded-full bg-grey">
-        <div className="transition-300 w-[20%] rounded-full bg-darkBlue" />
+        <div
+          className={`transition-300 rounded-full bg-darkBlue w-[${
+            progressContext.progress.tasksCompleted * 20
+          }%]`}
+        />
       </div>
       <div className="mb-10 text-right text-sm text-darkBlue md:mb-12 xl:text-base">
-        1/5 tasks complete
+        {progressContext.progress.tasksCompleted}/5 tasks complete
       </div>
       <div className="grid gap-5 md:grid-cols-2">
         {TASKS.map((task) => {
@@ -58,16 +64,17 @@ export default function TaskSelection() {
 
           return (
             <div
-              className="relative flex items-center gap-4 rounded-2xl bg-grey p-4 md:py-5"
+              className="transition-300 relative flex cursor-pointer items-center gap-4 rounded-2xl border border-transparent bg-grey px-4 py-6 hover:border-greyBlue hover:bg-opacity-40 md:py-8"
               key={task.title}
+              onClick={() => progressContext.changeScreen(task.title)}
             >
               <Image src={task.icon} alt={task.title} className="w-[60px]" />
               <div className="-mt-1.5">
-                <p className="mb-0.5 text-base font-semibold text-darkBlue">
+                <p className="mb-2 text-[16px] font-semibold text-darkBlue md:mb-3 md:text-[18px]">
                   {task.title}
                 </p>
                 <p
-                  className={`text-sm ${
+                  className={`text-sm md:text-base ${
                     taskCompleted ? 'text-green' : 'text-red'
                   }`}
                 >
@@ -77,6 +84,10 @@ export default function TaskSelection() {
                   src={helpIcon}
                   alt="help icon"
                   className="absolute right-4.5 bottom-4.5 w-5"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    modalContext.openModal(task.title, task.text);
+                  }}
                 />
               </div>
             </div>

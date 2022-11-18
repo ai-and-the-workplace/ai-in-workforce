@@ -12,7 +12,7 @@ export const ProgressContextProvider = ({ children }) => {
       'Captioning Content': false,
       'Creating Text From Bullet Points': false,
     },
-    numCompleted: 0,
+    tasksCompleted: 0,
   });
 
   function changeScreen(newscreen) {
