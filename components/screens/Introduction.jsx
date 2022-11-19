@@ -21,7 +21,7 @@ export default function Introduction() {
           </p>
         ))}
       </div>
-      <ContinueButton onClick={() => progressContext.changeScreen('consent')}>
+      <ContinueButton onClick={() => progressContext.changeScreen('Consent')}>
         Continue
       </ContinueButton>
     </div>

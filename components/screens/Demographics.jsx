@@ -18,7 +18,7 @@ export default function Demographics() {
           link="https://www.google.com"
         />
       </div>
-      <ContinueButton onClick={() => progressContext.changeScreen('attitudes')}>
+      <ContinueButton onClick={() => progressContext.changeScreen('Attitudes')}>
         Continue
       </ContinueButton>
     </div>

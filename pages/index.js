@@ -8,6 +8,8 @@ import Demographics from '../components/screens/Demographics';
 import Attitudes from '../components/screens/Attitudes';
 import WorkplaceTasks from '../components/screens/WorkplaceTasks';
 import TaskSelection from '../components/screens/TaskSelection';
+import SummarizingText from '../components/screens/SummarizingText';
+import Conclusion from '../components/screens/Conclusion';
 import Modal from '../components/UI/Modal';
 
 export default function Home() {
@@ -15,18 +17,21 @@ export default function Home() {
 
   return (
     <>
-      {progressContext.progress.screen === 'landing' && <Landing />}
-      {progressContext.progress.screen === 'introduction' && <Introduction />}
-      {progressContext.progress.screen === 'consent' && <Consent />}
-      {progressContext.progress.screen === 'instructions' && <Instructions />}
-      {progressContext.progress.screen === 'demographics' && <Demographics />}
-      {progressContext.progress.screen === 'attitudes' && <Attitudes />}
-      {progressContext.progress.screen === 'workplace tasks' && (
+      {progressContext.progress.screen === 'Landing' && <Landing />}
+      {progressContext.progress.screen === 'Introduction' && <Introduction />}
+      {progressContext.progress.screen === 'Consent' && <Consent />}
+      {progressContext.progress.screen === 'Instructions' && <Instructions />}
+      {progressContext.progress.screen === 'Demographics' && <Demographics />}
+      {progressContext.progress.screen === 'Attitudes' && <Attitudes />}
+      {progressContext.progress.screen === 'Workplace Tasks' && (
         <WorkplaceTasks />
       )}
-      {progressContext.progress.screen === 'task selection' && (
-        <TaskSelection />
+      {progressContext.progress.screen === 'Task Selection' &&
+        progressContext.progress.tasksCompleted < 5 && <TaskSelection />}
+      {progressContext.progress.screen === 'Summarizing Text' && (
+        <SummarizingText />
       )}
+      {progressContext.progress.tasksCompleted === 5 && <Conclusion />}
       <Modal />
     </>
   );

@@ -70,7 +70,7 @@ export default function TaskSelection() {
             >
               <Image src={task.icon} alt={task.title} className="w-[60px]" />
               <div className="-mt-1.5">
-                <p className="mb-2 text-[16px] font-semibold text-darkBlue md:mb-3 md:text-[18px]">
+                <p className="mb-2 text-[16px] font-semibold text-darkBlue md:text-[18px]">
                   {task.title}
                 </p>
                 <p

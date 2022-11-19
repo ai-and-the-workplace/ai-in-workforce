@@ -4,7 +4,7 @@ const ProgressContext = createContext();
 
 export const ProgressContextProvider = ({ children }) => {
   const [progress, setProgress] = useState({
-    screen: 'landing',
+    screen: 'Landing',
     tasksCompleted: {
       'Summarizing Text': false,
       'Social Media Content Generation': false,

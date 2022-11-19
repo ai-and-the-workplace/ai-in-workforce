@@ -25,7 +25,7 @@ export default function Attitudes() {
         <ExternalLink text="Attitudes Survey" link="https://www.google.com" />
       </div>
       <ContinueButton
-        onClick={() => progressContext.changeScreen('workplace tasks')}
+        onClick={() => progressContext.changeScreen('Workplace Tasks')}
       >
         Continue
       </ContinueButton>

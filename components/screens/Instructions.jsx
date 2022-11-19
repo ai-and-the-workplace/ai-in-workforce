@@ -22,7 +22,7 @@ export default function Instructions() {
         ))}
       </div>
       <ContinueButton
-        onClick={() => progressContext.changeScreen('demographics')}
+        onClick={() => progressContext.changeScreen('Demographics')}
       >
         Continue
       </ContinueButton>

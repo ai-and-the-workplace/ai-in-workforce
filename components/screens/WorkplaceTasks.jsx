@@ -22,7 +22,7 @@ export default function WorkplaceTasks() {
         ))}
       </div>
       <ContinueButton
-        onClick={() => progressContext.changeScreen('task selection')}
+        onClick={() => progressContext.changeScreen('Task Selection')}
       >
         Continue
       </ContinueButton>

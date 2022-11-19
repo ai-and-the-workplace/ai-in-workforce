@@ -31,10 +31,11 @@ export default function Button({
   onClick,
   disabled = false,
   children,
+  classes,
 }) {
   return (
     <div
-      className={`relative gap-2 
+      className={`relative
                 ${
                   hierarchy === 'primary'
                     ? 'bg-gradient-to-r from-darkBlue to-lightBlue'
@@ -44,13 +45,13 @@ export default function Button({
                 ${
                   mobileFullWidth
                     ? 'inline-block w-full text-center md:inline-flex md:w-auto'
-                    : 'inline-flex'
+                    : 'inline-flex gap-2'
                 }
                 ${
                   disabled
                     ? 'opacity-60'
                     : 'transition-300 cursor-pointer hover:-translate-y-0.5'
-                }`}
+                } ${classes} `}
       onClick={!disabled ? onClick : () => {}}
     >
       <p
