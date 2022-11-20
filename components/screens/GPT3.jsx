@@ -2,11 +2,15 @@ import Image from 'next/image';
 import { useState, useContext } from 'react';
 import ModalContext from '../../store/modal';
 import Button from '../UI/Button';
-import { TASKS } from './TaskSelection';
+import { TASKS } from '../../constants/constants';
 import help from '../../public/icons/help.svg';
+import ProgressContext from '../../store/progress';
 
-export default function SummarizingText() {
+export default function GPT3() {
   const modalContext = useContext(ModalContext);
+  const progressContext = useContext(ProgressContext);
+
+  const task = progressContext.progress.screen;
 
   const [promptInput, setPromptInput] = useState('');
   const [response, setResponse] = useState('');
@@ -34,12 +38,14 @@ export default function SummarizingText() {
   return (
     <div className="m-horizontal">
       <div className="mb-6 flex items-center justify-between md:mb-9">
-        <h1 className="title">Summarizing Text</h1>
+        <h1 className="title">{task}</h1>
         <Image
           src={help}
           alt="help icon"
           className="block w-6 cursor-pointer"
-          onClick={() => modalContext.openModal(TASKS[0].title, TASKS[0].text)}
+          onClick={() =>
+            modalContext.openModal(TASKS[task].title, TASKS[task].text)
+          }
         />
       </div>
       <div className="mb-6 flex flex-col md:mb-10 md:flex-row">

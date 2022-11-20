@@ -2,63 +2,48 @@ import Image from 'next/image';
 import { useContext } from 'react';
 import ProgressContext from '../../store/progress';
 import ModalContext from '../../store/modal';
-import summarizingText from '../../public/icons/summarizing-text.png';
-import socialMediaContentGenerator from '../../public/icons/social-media-content-generator.png';
-import copywriting from '../../public/icons/copywriting.png';
-import captioningContent from '../../public/icons/captioning-content.png';
-import creatingTextFromBulletPoints from '../../public/icons/creating-text-from-bullet-points.png';
+import Paragraphs from '../UI/Paragraphs';
 import helpIcon from '../../public/icons/help.svg';
+import { TASKS } from '../../constants/constants';
 
-export const TASKS = [
-  {
-    title: 'Summarizing Text',
-    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed viverra sodales metus, sit amet aliquam dolor consequat et. Mauris vel odio eget eros sodales rhoncus. Duis vestibulum, metus vitae placerat scelerisque, justo justo volutpat massa, at scelerisque nisi eros imperdiet justo.',
-    icon: summarizingText,
-  },
-  {
-    title: 'Social Media Content Generator',
-    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed viverra sodales metus, sit amet aliquam dolor consequat et. Mauris vel odio eget eros sodales rhoncus. Duis vestibulum, metus vitae placerat scelerisque, justo justo volutpat massa, at scelerisque nisi eros imperdiet justo.',
-    icon: socialMediaContentGenerator,
-  },
-  {
-    title: 'Copywriting',
-    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed viverra sodales metus, sit amet aliquam dolor consequat et. Mauris vel odio eget eros sodales rhoncus. Duis vestibulum, metus vitae placerat scelerisque, justo justo volutpat massa, at scelerisque nisi eros imperdiet justo.',
-    icon: copywriting,
-  },
-  {
-    title: 'Captioning Content',
-    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed viverra sodales metus, sit amet aliquam dolor consequat et. Mauris vel odio eget eros sodales rhoncus. Duis vestibulum, metus vitae placerat scelerisque, justo justo volutpat massa, at scelerisque nisi eros imperdiet justo.',
-    icon: captioningContent,
-  },
-  {
-    title: 'Creating Text From Bullet Points',
-    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed viverra sodales metus, sit amet aliquam dolor consequat et. Mauris vel odio eget eros sodales rhoncus. Duis vestibulum, metus vitae placerat scelerisque, justo justo volutpat massa, at scelerisque nisi eros imperdiet justo.',
-    icon: creatingTextFromBulletPoints,
-  },
+const TEXT = [
+  'Choose a task to complete. You will need to complete all 5 tasks. Click on the question mark to read instructions for the task.',
 ];
 
 export default function TaskSelection() {
   const progressContext = useContext(ProgressContext);
   const modalContext = useContext(ModalContext);
 
+  const tasksCompleted = progressContext.progress.tasksCompleted;
+
+  let barWidth = 'w-[20%]';
+
+  if (tasksCompleted === 1) {
+    barWidth = 'w-[20%]';
+  } else if (tasksCompleted === 2) {
+    barWidth = 'w-[40%]';
+  } else if (tasksCompleted === 3) {
+    barWidth = 'w-[60%]';
+  } else if (tasksCompleted === 4) {
+    barWidth = 'w-[80%]';
+  }
+
+  console.log(barWidth);
+
   return (
     <div className="m-horizontal">
       <h1 className="title mb-6">Task Selection</h1>
-      <p className="body mb-7 md:mb-9">
-        Choose a task to complete. You will need to complete all 5 tasks.
-      </p>
+      <Paragraphs paragraphs={TEXT} mb="mb-10 md:mb-16" />
       <div className="mb-5 flex h-1 justify-start rounded-full bg-grey">
-        <div
-          className={`transition-300 rounded-full bg-darkBlue w-[${String(
-            progressContext.progress.tasksCompleted * 20
-          )}%]`}
-        />
+        <div className={`h-full rounded-full bg-darkBlue ${barWidth}`} />
       </div>
       <div className="mb-10 text-right text-sm text-darkBlue md:mb-12 xl:text-base">
         {progressContext.progress.tasksCompleted}/5 tasks complete
       </div>
       <div className="grid gap-5 md:grid-cols-2">
-        {TASKS.map((task) => {
+        {Object.keys(TASKS).map((taskName) => {
+          const task = TASKS[taskName];
+
           const taskCompleted = progressContext.progress.tasks[task.title];
 
           return (

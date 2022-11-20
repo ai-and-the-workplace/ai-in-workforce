@@ -1,5 +1,6 @@
 import { useContext } from 'react';
 import ProgressContext from '../../store/progress';
+import Paragraphs from '../UI/Paragraphs';
 import { ContinueButton } from '../UI/Button';
 
 const TEXT = [
@@ -14,13 +15,7 @@ export default function WorkplaceTasks() {
   return (
     <div className="m-horizontal">
       <h1 className="title mb-6">Workplace Tasks</h1>
-      <div className="mb-14">
-        {TEXT.map((text, i) => (
-          <p className="body mb-4.5 last:mb-0 md:mb-5" key={`text-${i}`}>
-            {text}
-          </p>
-        ))}
-      </div>
+      <Paragraphs paragraphs={TEXT} mb="mb-14" />
       <ContinueButton
         onClick={() => progressContext.changeScreen('Task Selection')}
       >

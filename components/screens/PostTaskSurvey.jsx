@@ -16,7 +16,13 @@ export default function PostTaskSurvey() {
         <ExternalLink text="Post Task Survey" link="https://www.google.com" />
       </div>
       <ContinueButton
-        onClick={() => progressContext.changeScreen('Task Selection')}
+        onClick={() => {
+          if (progressContext.progress.tasksCompleted === 5) {
+            progressContext.changeScreen('Conclusion');
+          } else {
+            progressContext.changeScreen('Task Selection');
+          }
+        }}
       >
         Continue
       </ContinueButton>

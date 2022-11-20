@@ -17,6 +17,8 @@ export const ProgressContextProvider = ({ children }) => {
 
   function changeScreen(newScreen) {
     setProgress({ ...progress, screen: newScreen });
+
+    console.log(newScreen);
   }
 
   function completeTask(task) {

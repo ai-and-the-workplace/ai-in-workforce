@@ -5,8 +5,8 @@ export function ContinueButton({ onClick, disabled = false, children }) {
   return (
     <Button
       hierarchy="primary"
-      font="text-base xl:text-xl"
-      py="py-4 md:py-4.5"
+      font="text-base md:text-lg xl:text-xl"
+      py="py-4.5 md:py-6"
       px="md:pl-8 md:pr-6"
       borderRadius="rounded-full"
       showArrow={true}
@@ -33,30 +33,35 @@ export default function Button({
   children,
   classes,
 }) {
+  let buttonClasses = `relative gap-2 ${px} ${py} ${borderRadius}`;
+
+  if (hierarchy === 'primary') {
+    buttonClasses += ' bg-gradient-to-r from-darkBlue to-lightBlue';
+  } else {
+    buttonClasses += ' border border-darkBlue bg-white';
+  }
+
+  if (mobileFullWidth) {
+    buttonClasses +=
+      ' inline-block w-full text-center md:inline-flex md:w-auto';
+  } else {
+    buttonClasses += ' inline-flex';
+  }
+
+  if (disabled) {
+    buttonClasses += ' opacity-60 cursor-auto';
+  } else {
+    buttonClasses += ' transition-300 cursor-pointer hover:-translate-y-0.5';
+  }
+
+  buttonClasses += ` ${classes}`;
+
   return (
-    <div
-      className={`relative
-                ${
-                  hierarchy === 'primary'
-                    ? 'bg-gradient-to-r from-darkBlue to-lightBlue'
-                    : 'border border-darkBlue bg-white'
-                }
-                ${px} ${py} ${borderRadius} 
-                ${
-                  mobileFullWidth
-                    ? 'inline-block w-full text-center md:inline-flex md:w-auto'
-                    : 'inline-flex gap-2'
-                }
-                ${
-                  disabled
-                    ? 'opacity-60'
-                    : 'transition-300 cursor-pointer hover:-translate-y-0.5'
-                } ${classes} `}
-      onClick={!disabled ? onClick : () => {}}
-    >
+    <div className={buttonClasses} onClick={!disabled ? onClick : () => {}}>
       <p
-        className={`${hierarchy === 'primary' ? 'text-white' : 'text-darkBlue'} 
-                    ${font}`}
+        className={`${
+          hierarchy === 'primary' ? 'text-white' : 'text-darkBlue'
+        } ${font}`}
       >
         {children}
       </p>
@@ -64,12 +69,10 @@ export default function Button({
         <Image
           src={icon}
           alt="icon"
-          className={`w-6
-                  ${
-                    mobileFullWidth
-                      ? 'absolute right-4 top-1/2 -translate-y-1/2 md:relative md:top-0 md:right-0 md:translate-y-0 '
-                      : 'relative'
-                  }`}
+          className={`w-6 ${
+            mobileFullWidth &&
+            'absolute right-4 top-1/2 -translate-y-1/2 md:relative md:top-0 md:right-0 md:translate-y-0'
+          }`}
         />
       )}
     </div>

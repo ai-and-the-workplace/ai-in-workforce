@@ -1,5 +1,6 @@
 import { useContext } from 'react';
 import ProgressContext from '../../store/progress';
+import Paragraphs from '../UI/Paragraphs';
 import { ContinueButton } from '../UI/Button';
 
 const TEXT = [
@@ -14,13 +15,7 @@ export default function Introduction() {
   return (
     <div className="m-horizontal">
       <h1 className="title mb-6">Introduction</h1>
-      <div>
-        {TEXT.map((text, i) => (
-          <p className="body mb-4.5 last:mb-14 md:mb-5" key={`text-${i}`}>
-            {text}
-          </p>
-        ))}
-      </div>
+      <Paragraphs paragraphs={TEXT} mb="mb-14" />
       <ContinueButton onClick={() => progressContext.changeScreen('Consent')}>
         Continue
       </ContinueButton>

@@ -30,7 +30,7 @@ export default function Timer() {
   });
 
   return (
-    <div className="w-[76px] rounded-xl bg-grey py-1 text-center md:w-24 md:py-2">
+    <div className="w-[76px] rounded-xl bg-grey py-3 text-center md:w-24 md:py-4">
       <p className="text-base text-darkBlue md:text-lg">
         {minutes}:{seconds < 10 ? `0${seconds}` : seconds}
       </p>

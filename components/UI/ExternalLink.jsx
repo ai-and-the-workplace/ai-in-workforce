@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import externalLink from '../../public/icons/external-link.svg';
+import externalLinkIcon from '../../public/icons/external-link.svg';
 
 export default function ExternalLink({ text, link }) {
   return (
@@ -13,7 +13,11 @@ export default function ExternalLink({ text, link }) {
         <p className="text-xl font-semibold text-darkBlue md:text-2xl">
           {text}
         </p>
-        <Image src={externalLink} alt="external link icon" className="w-7" />
+        <Image
+          src={externalLinkIcon}
+          alt="external link icon"
+          className="w-7"
+        />
       </div>
     </a>
   );
