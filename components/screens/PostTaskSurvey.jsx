@@ -3,22 +3,21 @@ import ProgressContext from '../../store/progress';
 import ExternalLink from '../UI/ExternalLink';
 import { ContinueButton } from '../UI/Button';
 
-export default function Demographics() {
+export default function PostTaskSurvey() {
   const progressContext = useContext(ProgressContext);
 
   return (
     <div className="m-horizontal">
-      <h1 className="title mb-6">Demographic Questions</h1>
+      <h1 className="title mb-6">Post Task Survey</h1>
       <p className="body mb-6 md:mb-9">
-        Let&apos;s start off with some basic demographic questions about you:
+        Fill out this survey before starting the next task.
       </p>
       <div className="mb-16">
-        <ExternalLink
-          text="Demographics Survey"
-          link="https://www.google.com"
-        />
+        <ExternalLink text="Post Task Survey" link="https://www.google.com" />
       </div>
-      <ContinueButton onClick={() => progressContext.changeScreen('Attitudes')}>
+      <ContinueButton
+        onClick={() => progressContext.changeScreen('Task Selection')}
+      >
         Continue
       </ContinueButton>
     </div>

@@ -17,7 +17,10 @@ export default function Consent() {
         agree with the consent form below.
       </p>
       <div className="mb-8 md:mb-9">
-        <ExternalLink text="Consent Form" link="https://www.google.com" />
+        <ExternalLink
+          text="Consent Form"
+          link="https://drive.google.com/file/d/1P-N68dgwFbtZBPfjGkk0X0WEMqp0Lmrj/view?usp=sharing"
+        />
       </div>
       <div className="mb-16">
         <CheckBox

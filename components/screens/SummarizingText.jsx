@@ -1,17 +1,21 @@
-import { useState } from 'react';
+import Image from 'next/image';
+import { useState, useContext } from 'react';
+import ModalContext from '../../store/modal';
 import Button from '../UI/Button';
+import { TASKS } from './TaskSelection';
+import help from '../../public/icons/help.svg';
 
 export default function SummarizingText() {
+  const modalContext = useContext(ModalContext);
+
   const [promptInput, setPromptInput] = useState('');
   const [response, setResponse] = useState('');
-  const [waitingForResponse, setWaitingForResponse] = useState(false);
 
   function promptChangeHandler(e) {
     setPromptInput(e.target.value);
   }
 
   async function promptSubmitHandler() {
-    setWaitingForResponse(true);
     setPromptInput('');
 
     const response = await fetch('/api/generate', {
@@ -25,13 +29,19 @@ export default function SummarizingText() {
     const data = await response.json();
 
     setResponse(data.response);
-
-    setWaitingForResponse(false);
   }
 
   return (
     <div className="m-horizontal">
-      <h1 className="title mb-6 md:mb-9">Summarizing Text</h1>
+      <div className="mb-6 flex items-center justify-between md:mb-9">
+        <h1 className="title">Summarizing Text</h1>
+        <Image
+          src={help}
+          alt="help icon"
+          className="block w-6 cursor-pointer"
+          onClick={() => modalContext.openModal(TASKS[0].title, TASKS[0].text)}
+        />
+      </div>
       <div className="mb-6 flex flex-col md:mb-10 md:flex-row">
         <textarea
           value={promptInput}
@@ -49,12 +59,11 @@ export default function SummarizingText() {
         <Button
           hierarchy="primary"
           font="text-white text-base md:text-lg"
-          py="py-4 md:px-7"
+          py="py-3 md:py-4 md:px-7"
           borderRadius="rounded-b-xl border border-dark-blue md:rounded-none md:rounded-r-xl"
           onClick={promptSubmitHandler}
           disabled={promptInput === ''}
           mobileFullWidth={true}
-          isLoading={waitingForResponse}
           classes="hover:translate-y-0"
         >
           Generate

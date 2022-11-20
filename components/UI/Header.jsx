@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import Image from 'next/image';
 import ProgressContext from '../../store/progress';
+import Timer from './Timer';
 import Button from './Button';
 import uoft from '../../public/icons/u-of-t.png';
 import upRightArrow from '../../public/icons/up-right-arrow.svg';
@@ -14,6 +15,7 @@ export default function Header() {
         <Image src={uoft} alt="U of T logo" className="w-4" />
         <h2 className="text-base text-darkBlue">University of Toronto</h2>
       </div>
+      {progressContext.progress.screen === 'Summarizing Text' && <Timer />}
       {progressContext.progress.screen === 'landing' && (
         <div className="hidden sm:inline-block">
           <Button

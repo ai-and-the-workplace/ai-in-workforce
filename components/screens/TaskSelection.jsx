@@ -9,7 +9,7 @@ import captioningContent from '../../public/icons/captioning-content.png';
 import creatingTextFromBulletPoints from '../../public/icons/creating-text-from-bullet-points.png';
 import helpIcon from '../../public/icons/help.svg';
 
-const TASKS = [
+export const TASKS = [
   {
     title: 'Summarizing Text',
     text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed viverra sodales metus, sit amet aliquam dolor consequat et. Mauris vel odio eget eros sodales rhoncus. Duis vestibulum, metus vitae placerat scelerisque, justo justo volutpat massa, at scelerisque nisi eros imperdiet justo.',
@@ -49,9 +49,9 @@ export default function TaskSelection() {
       </p>
       <div className="mb-5 flex h-1 justify-start rounded-full bg-grey">
         <div
-          className={`transition-300 rounded-full bg-darkBlue w-[${
+          className={`transition-300 rounded-full bg-darkBlue w-[${String(
             progressContext.progress.tasksCompleted * 20
-          }%]`}
+          )}%]`}
         />
       </div>
       <div className="mb-10 text-right text-sm text-darkBlue md:mb-12 xl:text-base">
@@ -59,8 +59,7 @@ export default function TaskSelection() {
       </div>
       <div className="grid gap-5 md:grid-cols-2">
         {TASKS.map((task) => {
-          const taskCompleted =
-            progressContext.progress.tasksCompleted[task.title];
+          const taskCompleted = progressContext.progress.tasks[task.title];
 
           return (
             <div

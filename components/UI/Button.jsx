@@ -5,8 +5,8 @@ export function ContinueButton({ onClick, disabled = false, children }) {
   return (
     <Button
       hierarchy="primary"
-      font="text-base text-lg xl:text-xl"
-      py="py-2 md:py-3"
+      font="text-base xl:text-xl"
+      py="py-4 md:py-4.5"
       px="md:pl-8 md:pr-6"
       borderRadius="rounded-full"
       showArrow={true}

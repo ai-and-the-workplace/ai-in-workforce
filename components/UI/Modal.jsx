@@ -13,7 +13,7 @@ export default function Modal() {
         modalContext.modal.visible === false && 'hidden'
       }`}
     >
-      <div className="absolute top-1/2 left-1/2 w-[min(calc(100%-40px),600px)] -translate-y-1/2 -translate-x-1/2 rounded-3xl bg-grey px-5 pt-20 pb-6 md:rounded-[30px] md:px-12 md:pb-12 md:text-center">
+      <div className="absolute top-1/2 left-1/2 w-[min(calc(100%-40px),680px)] -translate-y-1/2 -translate-x-1/2 rounded-3xl bg-grey px-5 pt-20 pb-6 md:rounded-[30px] md:px-12 md:pb-12 md:pt-24 md:text-center">
         <Image
           src={close}
           alt="close icon"
@@ -23,7 +23,7 @@ export default function Modal() {
         <h3 className="mb-3 text-3xl font-semibold text-darkBlue md:mb-4 md:text-4xl">
           {modalContext.modal.title}
         </h3>
-        <p className="mb-7 text-left text-base text-darkBlue md:mb-12 md:text-lg">
+        <p className="mb-7 text-left text-base text-darkBlue md:mb-16 md:text-lg">
           {modalContext.modal.text}
         </p>
         <Button
