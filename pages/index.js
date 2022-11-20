@@ -1,5 +1,6 @@
 import { useContext } from 'react';
 import ProgressContext from '../store/progress';
+import Header from '../components/UI/Header';
 import Landing from '../components/screens/Landing';
 import Introduction from '../components/screens/Introduction';
 import Consent from '../components/screens/Consent';
@@ -15,6 +16,10 @@ import { TASKS } from '../constants/constants';
 
 export default function Home() {
   const progressContext = useContext(ProgressContext);
+
+  if (!progressContext.progress) {
+    return null;
+  }
 
   const curScreen = progressContext.progress.screen;
 
@@ -44,6 +49,7 @@ export default function Home() {
 
   return (
     <>
+      <Header />
       {screen}
       <Modal />
     </>

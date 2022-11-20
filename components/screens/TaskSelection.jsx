@@ -16,7 +16,7 @@ export default function TaskSelection() {
 
   const tasksCompleted = progressContext.progress.tasksCompleted;
 
-  let barWidth = 'w-[20%]';
+  let barWidth = 'w-[0%]';
 
   if (tasksCompleted === 1) {
     barWidth = 'w-[20%]';

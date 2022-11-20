@@ -13,7 +13,12 @@ export default function Header() {
   return (
     <div className="relative z-10 mb-14 flex h-16 items-center justify-between px-5 pt-14 xs:px-9 md:mb-20 md:px-12 md:pt-16">
       <div className="flex items-center gap-4">
-        <Image src={uoftLogo} alt="U of T logo" className="w-4" />
+        <Image
+          src={uoftLogo}
+          alt="U of T logo"
+          className="w-4"
+          onClick={() => localStorage.clear('progress')}
+        />
         <h2 className="text-base text-darkBlue">University of Toronto</h2>
       </div>
       {Object.hasOwn(TASKS, progressContext.progress.screen) && <Timer />}
