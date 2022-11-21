@@ -20,8 +20,6 @@ export default function GPT3() {
   }
 
   async function promptSubmitHandler() {
-    setPromptInput('');
-
     const response = await fetch('/api/generate', {
       method: 'POST',
       headers: {
@@ -32,7 +30,12 @@ export default function GPT3() {
 
     const data = await response.json();
 
-    setResponse(data.response);
+    const promptResponse = data.response;
+
+    progressContext.addInteraction(promptInput, promptResponse);
+
+    setPromptInput('');
+    setResponse(promptResponse);
   }
 
   return (
@@ -81,7 +84,9 @@ export default function GPT3() {
             AI response will be here...
           </p>
         ) : (
-          <p className="py-3 px-4 md:py-4 md:px-5 md:text-lg">{response}</p>
+          <p className="py-3 px-4 leading-relaxed md:py-4 md:px-5 md:text-lg md:leading-loose">
+            {response}
+          </p>
         )}
       </div>
     </div>

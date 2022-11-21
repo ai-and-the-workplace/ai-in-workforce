@@ -28,8 +28,6 @@ export default function TaskSelection() {
     barWidth = 'w-[80%]';
   }
 
-  console.log(barWidth);
-
   return (
     <div className="m-horizontal">
       <h1 className="title mb-6">Task Selection</h1>

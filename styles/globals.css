@@ -8,7 +8,7 @@
   }
 
   .body {
-    @apply text-base text-darkBlue xl:text-lg;
+    @apply text-base text-darkBlue lg:text-lg;
   }
 
   .m-horizontal {

@@ -5,7 +5,7 @@ export default function Timer() {
   const progressContext = useContext(ProgressContext);
 
   const [minutes, setMinutes] = useState(0);
-  const [seconds, setSeconds] = useState(1);
+  const [seconds, setSeconds] = useState(10);
 
   useEffect(() => {
     let timerInterval = setInterval(() => {
