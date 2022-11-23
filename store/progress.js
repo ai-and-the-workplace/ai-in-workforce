@@ -26,9 +26,6 @@ export const ProgressContextProvider = ({ children }) => {
   const [progress, setProgress] = useState();
 
   if (progress && progress.screen === 'Conclusion' && !progress.doneStudy) {
-    console.log(progress);
-    console.log('post!');
-
     postData();
 
     setProgress({ ...progress, doneStudy: true });

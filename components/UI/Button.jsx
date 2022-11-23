@@ -33,7 +33,7 @@ export default function Button({
   children,
   classes,
 }) {
-  let buttonClasses = `relative gap-2 ${px} ${py} ${borderRadius}`;
+  let buttonClasses = `relative flex items-center gap-2 ${px} ${py} ${borderRadius}`;
 
   if (hierarchy === 'primary') {
     buttonClasses += ' bg-gradient-to-r from-darkBlue to-lightBlue';
