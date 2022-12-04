@@ -36,6 +36,7 @@ module.exports = {
       greyBlue: '#707E8D',
       green: '#5CBD52',
       red: '#ED6E6E',
+      hightlight: '#f1e740',
     },
     screens: {
       '2xs': '360px',

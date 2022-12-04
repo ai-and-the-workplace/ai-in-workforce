@@ -25,12 +25,6 @@ function isProgress(progress) {
 export const ProgressContextProvider = ({ children }) => {
   const [progress, setProgress] = useState();
 
-  if (progress && progress.screen === 'Conclusion' && !progress.doneStudy) {
-    postData();
-
-    setProgress({ ...progress, doneStudy: true });
-  }
-
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     setInitialProgress();
@@ -42,16 +36,10 @@ export const ProgressContextProvider = ({ children }) => {
     }
   }, [progress]);
 
-  async function postData() {
-    try {
-      const docRef = await addDoc(
-        collection(db, 'study-1'),
-        progress.responses
-      );
-      console.log('Document written with ID: ', docRef.id);
-    } catch (e) {
-      console.error('Error adding document: ', e);
-    }
+  if (progress && progress.screen === 'Conclusion' && !progress.doneStudy) {
+    postData();
+
+    setProgress((prevProgress) => ({ ...prevProgress, doneStudy: true }));
   }
 
   function setInitialProgress() {
@@ -67,20 +55,21 @@ export const ProgressContextProvider = ({ children }) => {
     }
 
     setProgress({
+      id: Math.floor(Math.random() * 1000000 + 1),
       screen: 'Landing',
       tasks: {
-        'Summarizing Text': false,
-        'Social Media Content Generator': false,
-        Copywriting: false,
-        'Captioning Content': false,
-        'Creating Text From Bullet Points': false,
+        'Content Creation': false,
+        'Interview Questions': false,
+        'Making Predictions': false,
+        'Fact Checking': false,
+        'Writing a Recommendation Letter': false,
       },
       responses: {
-        'Summarizing Text': [],
-        'Social Media Content Generator': [],
-        Copywriting: [],
-        'Captioning Content': [],
-        'Creating Text From Bullet Points': [],
+        'Content Creation': [],
+        'Interview Questions': [],
+        'Making Predictions': [],
+        'Fact Checking': [],
+        'Writing a Recommendation Letter': [],
       },
       tasksCompleted: 0,
       doneStudy: false,
@@ -88,7 +77,24 @@ export const ProgressContextProvider = ({ children }) => {
   }
 
   function changeScreen(newScreen) {
-    setProgress({ ...progress, screen: newScreen });
+    setProgress((prevProgress) => ({ ...prevProgress, screen: newScreen }));
+  }
+
+  function addInteraction(input, response) {
+    const screen = progress.screen;
+
+    if (Object.hasOwn(TASKS, screen)) {
+      setProgress((prevProgress) => ({
+        ...prevProgress,
+        responses: {
+          ...prevProgress.responses,
+          [screen]: [
+            ...prevProgress.responses[screen],
+            { input: input, response: response },
+          ],
+        },
+      }));
+    }
   }
 
   function completeTask(task) {
@@ -100,23 +106,16 @@ export const ProgressContextProvider = ({ children }) => {
     }));
   }
 
-  function addInteraction(input, response) {
-    const screen = progress.screen;
-
-    if (!Object.hasOwn(TASKS, screen)) {
-      return;
+  async function postData() {
+    try {
+      const docRef = await addDoc(collection(db, 'study-1'), {
+        id: progress.id,
+        responses: progress.responses,
+      });
+      console.log('Document written with ID: ', docRef.id);
+    } catch (e) {
+      console.error('Error adding document: ', e);
     }
-
-    setProgress({
-      ...progress,
-      responses: {
-        ...progress.responses,
-        [screen]: [
-          ...progress.responses[screen],
-          { input: input, response: response },
-        ],
-      },
-    });
   }
 
   return (

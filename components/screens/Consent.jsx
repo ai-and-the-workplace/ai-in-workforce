@@ -21,7 +21,7 @@ export default function Consent() {
       <div className="mb-8 md:mb-12">
         <ExternalLink
           text="Consent Form"
-          link="https://drive.google.com/file/d/1P-N68dgwFbtZBPfjGkk0X0WEMqp0Lmrj/view?usp=sharing"
+          link="https://drive.google.com/file/d/1jB3CsK8gBM9LEcu4UhZShVOTMkb6tg1P/view?usp=sharing"
         />
       </div>
       <div className="mb-16">
@@ -33,7 +33,7 @@ export default function Consent() {
         />
       </div>
       <ContinueButton
-        disabled={agree === false}
+        disabled={!agree}
         onClick={() => progressContext.changeScreen('Instructions')}
       >
         Continue

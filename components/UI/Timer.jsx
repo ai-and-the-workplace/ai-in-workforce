@@ -27,7 +27,7 @@ export default function Timer() {
     return () => {
       clearInterval(timerInterval);
     };
-  });
+  }, [minutes, seconds, progressContext]);
 
   return (
     <div className="w-[76px] rounded-xl bg-grey py-3 text-center md:w-24 md:py-4">

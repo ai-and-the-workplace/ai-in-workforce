@@ -4,9 +4,10 @@ import Paragraphs from '../UI/Paragraphs';
 import { ContinueButton } from '../UI/Button';
 
 const TEXT = [
-  'We will start the study by asking you to provide some general information about yourself, including your attitudes and beliefs about diverse topics.',
-  'Since we are interested in how people conduct basic work tasks, afterwards, we will ask you to go through X tasks that a person can be tasked with as a knowledge or administrative worker.',
-  'The tasks will be described in more detail later and your job will be to do them to the best of your ability. Your output on these tasks will not be evaluated nor will it have an impact on your participation payment.',
+  'We will start the study by asking you to provide some general information about yourself, including your attitudes and beliefs about diverse topics. ',
+  "Since we are interested in people's behavior in work contexts, afterwards, we will ask you to go through 5 tasks that a person can be asked to perform as a knowledge or administrative worker.",
+  'The tasks will be described in more detail later and your job will be to execute them to the best of your ability.',
+  'Click continue to go to the next part.',
 ];
 
 export default function Instructions() {

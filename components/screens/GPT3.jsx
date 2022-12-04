@@ -14,12 +14,15 @@ export default function GPT3() {
 
   const [promptInput, setPromptInput] = useState('');
   const [response, setResponse] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
   function promptChangeHandler(e) {
     setPromptInput(e.target.value);
   }
 
   async function promptSubmitHandler() {
+    setIsLoading(true);
+
     const response = await fetch('/api/generate', {
       method: 'POST',
       headers: {
@@ -36,18 +39,25 @@ export default function GPT3() {
 
     setPromptInput('');
     setResponse(promptResponse);
+
+    setIsLoading(false);
   }
 
   return (
     <div className="m-horizontal">
-      <div className="mb-6 flex items-center justify-between md:mb-9">
-        <h1 className="title">{task}</h1>
+      <div className="mb-10 flex flex-wrap items-center justify-between gap-4 md:mb-12">
+        <div className="">
+          <h1 className="title mb-4 md:mb-6">{task}</h1>
+          <p className="body leading-relaxed">
+            Click on the question mark icon to read instructions.
+          </p>
+        </div>
         <Image
           src={help}
           alt="help icon"
           className="block w-6 cursor-pointer"
           onClick={() =>
-            modalContext.openModal(TASKS[task].title, TASKS[task].text)
+            modalContext.openModal(TASKS[task].title, TASKS[task].instructions)
           }
         />
       </div>
@@ -73,12 +83,13 @@ export default function GPT3() {
           onClick={promptSubmitHandler}
           disabled={promptInput === ''}
           mobileFullWidth={true}
-          classes="hover:translate-y-0"
+          isLoading={isLoading}
+          classes="hover:translate-y-0 justify-center"
         >
           Generate
         </Button>
       </div>
-      <div className="border-blue-2 bg-blue-1 h-[280px] rounded-xl border md:h-[360px] md:rounded-2xl">
+      <div className="border-blue-2 bg-blue-1 h-[280px] overflow-y-scroll rounded-xl border md:h-[360px] md:rounded-2xl">
         {response === '' ? (
           <p className="text-blue-2-disabled py-3 px-4 md:py-4 md:px-5 md:text-lg">
             AI response will be here...

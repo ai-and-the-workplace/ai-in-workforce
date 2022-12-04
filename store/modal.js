@@ -18,7 +18,11 @@ export const ModalContextProvider = ({ children }) => {
   }
 
   function closeModal() {
-    setModal({ visible: false, title: '', text: '' });
+    setModal({
+      visible: false,
+      title: '',
+      text: ''
+    });
   }
 
   return (

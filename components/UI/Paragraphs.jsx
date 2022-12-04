@@ -3,7 +3,7 @@ export default function Paragraphs({ paragraphs, mb }) {
     <div className={mb}>
       {paragraphs.map((text, i) => (
         <p
-          className="body mb-4.5 leading-relaxed md:mb-5 md:leading-loose"
+          className="body mb-4.5 leading-loose md:mb-5"
           dangerouslySetInnerHTML={{ __html: text }}
           key={`text-${i}`}
         />

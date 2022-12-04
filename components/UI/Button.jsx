@@ -30,10 +30,11 @@ export default function Button({
   mobileFullWidth,
   onClick,
   disabled = false,
+  isLoading = false,
   children,
   classes,
 }) {
-  let buttonClasses = `relative flex items-center gap-2 ${px} ${py} ${borderRadius}`;
+  let buttonClasses = `relative flex items-center justify-center gap-2 ${px} ${py} ${borderRadius}`;
 
   if (hierarchy === 'primary') {
     buttonClasses += ' bg-gradient-to-r from-darkBlue to-lightBlue';
@@ -58,13 +59,26 @@ export default function Button({
 
   return (
     <div className={buttonClasses} onClick={!disabled ? onClick : () => {}}>
-      <p
-        className={`${
-          hierarchy === 'primary' ? 'text-white' : 'text-darkBlue'
-        } ${font}`}
-      >
-        {children}
-      </p>
+      {isLoading ? (
+        <>
+          <p className={`opacity-0 ${font}`}>{children}</p>
+          <div className="absolute top-1/2 flex -translate-y-1/2 items-center justify-center lg:translate-x-0">
+            <div
+              className="top-0 inline-block h-6 w-6 animate-spin rounded-full border-4 border-r-darkBlue text-white"
+              role="status"
+            />
+          </div>
+        </>
+      ) : (
+        <p
+          className={`${
+            hierarchy === 'primary' ? 'text-white' : 'text-darkBlue'
+          } ${font}`}
+        >
+          {children}
+        </p>
+      )}
+
       {icon && (
         <Image
           src={icon}

@@ -1,22 +1,35 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import ProgressContext from '../../store/progress';
 import Paragraphs from '../UI/Paragraphs';
 import { ContinueButton } from '../UI/Button';
+import CheckBox from '../UI/CheckBox';
 
 const TEXT = [
-  "The following study is conducted by researchers from the University of Toronto in Canada. We are interested in how people's behavior in workplace settings.",
-  'Please note that the study consists of questions where you will have to indicate your choices and preferences, as well as perform basic knowledge and administrative worker tasks.',
-  'Some people might not like answering these questions and tend to quit a survey once they see them. If a sizable number of people quit a survey halfway, the data quality would be compromised. However, our research depends on good quality data. Thus, please make sure you do not mind such questions before starting this study.',
+  'In this study, you will be asked to provide some basic information about yourself, about your workplace experiences and attitudes, as well as perform several tasks that one may normally encounter in a work context.',
+  'The study lasts around 30 minutes and you will be compensated with XXXX.',
 ];
 
 export default function Introduction() {
   const progressContext = useContext(ProgressContext);
 
+  const [agree, setAgree] = useState(false);
+
   return (
     <div className="m-horizontal">
       <h1 className="title mb-6">Introduction</h1>
-      <Paragraphs paragraphs={TEXT} mb="mb-14" />
-      <ContinueButton onClick={() => progressContext.changeScreen('Consent')}>
+      <Paragraphs paragraphs={TEXT} mb="mb-8 md:mb-12" />
+      <div className="mb-16">
+        <CheckBox
+          id="agreement"
+          label="Are you willing to commit to taking part in this study to the best of your ability?"
+          value={agree}
+          valueChangeHandler={() => setAgree((prevAgree) => !prevAgree)}
+        />
+      </div>
+      <ContinueButton
+        onClick={() => progressContext.changeScreen('About The Study')}
+        disabled={!agree}
+      >
         Continue
       </ContinueButton>
     </div>

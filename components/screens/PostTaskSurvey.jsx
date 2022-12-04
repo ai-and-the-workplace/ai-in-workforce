@@ -6,22 +6,37 @@ import { ContinueButton } from '../UI/Button';
 export default function PostTaskSurvey() {
   const progressContext = useContext(ProgressContext);
 
+  let nextScreen;
+
+  if (progressContext.progress.tasksCompleted === 1) {
+    nextScreen = 'Interview Questions';
+  } else if (progressContext.progress.tasksCompleted === 2) {
+    nextScreen = 'Making Predictions';
+  } else if (progressContext.progress.tasksCompleted === 3) {
+    nextScreen = 'Fact Checking';
+  } else if (progressContext.progress.tasksCompleted === 4) {
+    nextScreen = 'Writing a Recommendation Letter';
+  } else {
+    nextScreen = 'Conclusion';
+  }
+
   return (
     <div className="m-horizontal">
       <h1 className="title mb-6">Post Task Survey</h1>
-      <p className="body mb-6 md:mb-9">
-        Fill out this survey before starting the next task.
+      <p className="body mb-6 leading-loose md:mb-9">
+        Fill out this survey before starting the next task. Your patient ID is{' '}
+        <strong>{progressContext.progress.id}</strong>. Please enter it into the
+        survey.
       </p>
       <div className="mb-16">
-        <ExternalLink text="Post Task Survey" link="https://www.google.com" />
+        <ExternalLink
+          text="Post Task Survey"
+          link="https://www.surveymonkey.com/r/CL68FB2"
+        />
       </div>
       <ContinueButton
         onClick={() => {
-          if (progressContext.progress.tasksCompleted === 5) {
-            progressContext.changeScreen('Conclusion');
-          } else {
-            progressContext.changeScreen('Task Selection');
-          }
+          progressContext.changeScreen(nextScreen);
         }}
       >
         Continue
