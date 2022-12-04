@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useState, useContext } from 'react';
 import ProgressContext from '../../store/progress';
 import ExternalLink from '../UI/ExternalLink';
 import { ContinueButton } from '../UI/Button';
@@ -20,6 +20,8 @@ export default function PostTaskSurvey() {
     nextScreen = 'Conclusion';
   }
 
+  const [buttonEnabled, setButtonEnabled] = useState(false);
+
   return (
     <div className="m-horizontal">
       <h1 className="title mb-6">Post Task Survey</h1>
@@ -32,12 +34,14 @@ export default function PostTaskSurvey() {
         <ExternalLink
           text="Post Task Survey"
           link="https://www.surveymonkey.com/r/CL68FB2"
+          onClick={() => setButtonEnabled(true)}
         />
       </div>
       <ContinueButton
         onClick={() => {
           progressContext.changeScreen(nextScreen);
         }}
+        disabled={!buttonEnabled}
       >
         Continue
       </ContinueButton>

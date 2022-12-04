@@ -1,10 +1,12 @@
-import { useContext } from 'react';
+import { useState, useContext } from 'react';
 import ProgressContext from '../../store/progress';
 import ExternalLink from '../UI/ExternalLink';
 import { ContinueButton } from '../UI/Button';
 
 export default function PreStudySurvey() {
   const progressContext = useContext(ProgressContext);
+
+  const [buttonEnabled, setButtonEnabled] = useState(false);
 
   return (
     <div className="m-horizontal">
@@ -18,10 +20,12 @@ export default function PreStudySurvey() {
         <ExternalLink
           text="Pre-Study Survey"
           link="https://www.surveymonkey.com/r/CLHZQ9T"
+          onClick={() => setButtonEnabled(true)}
         />
       </div>
       <ContinueButton
         onClick={() => progressContext.changeScreen('Content Creation')}
+        disabled={!buttonEnabled}
       >
         Continue
       </ContinueButton>
