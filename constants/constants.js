@@ -3,29 +3,30 @@ export const TASKS = {
     title: 'Content Creation',
     instructions: [
       'You have just been hired as a content creator for your company. Your job in this task will be to create social media captions by using the prompts below. Please use the AI to help you do it.',
+      'Please copy and paste the non-highlighted portion in the generate field and replace the highlighted portion with a scenario of your choosing.',
       'Write a 50 word tweet about <mark>a project in your workplace</mark>',
       'Write a funny and short instagram caption about <mark>a new initiative in your workplace</mark>',
       'Write a sarcastic and short instagram caption about <mark>a celebration</mark>',
       'Write a Facebook post to summarize <mark>the initiatives in your workplace</mark>',
       'Promote <mark>an object</mark> so that someone will buy it on an online marketplace',
       'Write a meaningful post about <mark>a success in your workplace</mark>',
-      '*Fill in the highlighted segments based on your personal experiences',
     ],
   },
   'Interview Questions': {
     title: 'Interview Questions',
     instructions: [
       'You have been asked to prepare some interview questions. Please use the AI to create questions for each scenario.',
-      'Create 10 questions for a <mark>work position</mark> (i.e. car salesman, nurse, etc) ',
+      'Please copy and paste the non-highlighted portion in the generate field and replace the highlighted portion with a scenario of your choosing. The information in the brackets are suggestion for you to try.',
+      'Create 10 questions for hiring a <mark>work position</mark> (i.e. car salesman, nurse, etc) ',
       'Create 8 interview questions for a research study on a <mark>topic</mark> (customer satisfaction, patient experience, etc)',
-      'Create 4 preliminary screening questions for <mark>a position</mark>',
-      '*Fill in the highlighted segments based on your personal experiences',
+      'Create 4 preliminary screening questions for hiring <mark>a position</mark>',
     ],
   },
   'Making Predictions': {
     title: 'Making Predictions',
     instructions: [
       'Give the AI the following prompts and judge the quality of its answers.',
+      'Please copy and paste the prompts into the generate section within the AI tool.',
       'Will Twitter increase its users in 2023?',
       'What will be the exchange rate for euros and dollars in 2025?',
       'Will we see a growth in news items written by AI?',
@@ -47,6 +48,7 @@ export const TASKS = {
     title: 'Writing a Recommendation Letter',
     instructions: [
       'Please use the AI to write a recommendation letter based on the scenarios below:',
+      'Please copy and paste the prompts into the generate section within the AI tool and replace the highlighted portion. You may use the prompts given in the brackets.',
       'Write a 300 word recommendation for a former colleague in your marketing company. The colleague did a relatively good job and was friendly with others.',
       'Write a 500 word recommendation for a current intern for a position in financial consulting company',
       "Write a 500 word recommendation letter for <mark>a scholarship</mark> based on the scholarship's criteria (i.e. Rhodes Scholarship, McArthur Fellowship, Marshall scholarships)",

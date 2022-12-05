@@ -13,7 +13,7 @@ export default function PreStudySurvey() {
       <h1 className="title mb-6">Pre-Study Survey</h1>
       <p className="body mb-6 leading-loose md:mb-9">
         Let&apos;s start off with some basic demographic questions about you.
-        Your patient ID is: <strong>{progressContext.progress.id}</strong>.
+        Your participant ID is: <strong>{progressContext.progress.id}</strong>.
         Please enter it into the survey.
       </p>
       <div className="mb-16">

@@ -7,6 +7,7 @@ const TEXT = [
   'We will start the study by asking you to provide some general information about yourself, including your attitudes and beliefs about diverse topics. ',
   "Since we are interested in people's behavior in work contexts, afterwards, we will ask you to go through 5 tasks that a person can be asked to perform as a knowledge or administrative worker.",
   'The tasks will be described in more detail later and your job will be to execute them to the best of your ability.',
+  '<strong>You will receive an unique ID number as you go through this study. Please write down this number as you will need it to answer the surveys.</strong>',
   'Click continue to go to the next part.',
 ];
 
