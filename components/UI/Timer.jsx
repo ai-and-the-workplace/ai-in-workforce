@@ -4,8 +4,8 @@ import ProgressContext from '../../store/progress';
 export default function Timer() {
   const progressContext = useContext(ProgressContext);
 
-  const [minutes, setMinutes] = useState(0);
-  const [seconds, setSeconds] = useState(2);
+  const [minutes, setMinutes] = useState(5);
+  const [seconds, setSeconds] = useState(0);
 
   useEffect(() => {
     let timerInterval = setInterval(() => {
