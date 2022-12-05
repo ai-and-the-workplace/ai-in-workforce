@@ -10,6 +10,7 @@ import PreStudySurvey from '../components/screens/PreStudySurvey';
 import WorkplaceTasks from '../components/screens/WorkplaceTasks';
 import GPT3 from '../components/screens/GPT3';
 import PostTaskSurvey from '../components/screens/PostTaskSurvey';
+import PostStudyServey from '../components/screens/PostStudySurvey';
 import Conclusion from '../components/screens/Conclusion';
 import Modal from '../components/UI/Modal';
 import { TASKS } from '../constants/constants';
@@ -41,6 +42,8 @@ export default function Home() {
     screen = <WorkplaceTasks />;
   } else if (curScreen === 'Post Task Survey') {
     screen = <PostTaskSurvey />;
+  } else if (curScreen === 'Post Study Survey') {
+    screen = <PostStudyServey />;
   } else if (curScreen === 'Conclusion') {
     screen = <Conclusion />;
   } else if (Object.hasOwn(TASKS, curScreen)) {
