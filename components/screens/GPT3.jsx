@@ -1,13 +1,9 @@
-import Image from 'next/image';
 import { useState, useContext } from 'react';
-import ModalContext from '../../store/modal';
 import Button from '../UI/Button';
 import { TASKS } from '../../constants/constants';
-import help from '../../public/icons/help.svg';
 import ProgressContext from '../../store/progress';
 
 export default function GPT3() {
-  const modalContext = useContext(ModalContext);
   const progressContext = useContext(ProgressContext);
 
   const task = progressContext.progress.screen;
@@ -45,21 +41,17 @@ export default function GPT3() {
 
   return (
     <div className="m-horizontal">
-      <div className="mb-10 flex flex-wrap items-center justify-between gap-4 md:mb-12">
-        <div className="">
-          <h1 className="title mb-4 md:mb-6">{task}</h1>
-          <p className="body leading-relaxed">
-            Click on the question mark icon to read instructions.
-          </p>
+      <div className="mb-10 gap-4 md:mb-12">
+        <h1 className="title mb-4 md:mb-6">{task}</h1>
+        <div className="flex flex-col gap-2 md:gap-4">
+          {TASKS[task].instructions.map((instruction, i) => (
+            <p
+              className="body leading-loose lg:leading-loose"
+              key={`instruction-${i}`}
+              dangerouslySetInnerHTML={{ __html: instruction }}
+            />
+          ))}
         </div>
-        <Image
-          src={help}
-          alt="help icon"
-          className="block w-6 cursor-pointer"
-          onClick={() =>
-            modalContext.openModal(TASKS[task].title, TASKS[task].instructions)
-          }
-        />
       </div>
       <div className="mb-6 flex flex-col md:mb-10 md:flex-row">
         <textarea

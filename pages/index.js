@@ -12,7 +12,6 @@ import GPT3 from '../components/screens/GPT3';
 import PostTaskSurvey from '../components/screens/PostTaskSurvey';
 import PostStudyServey from '../components/screens/PostStudySurvey';
 import Conclusion from '../components/screens/Conclusion';
-import Modal from '../components/UI/Modal';
 import { TASKS } from '../constants/constants';
 
 export default function Home() {
@@ -54,7 +53,6 @@ export default function Home() {
     <>
       <Header />
       {screen}
-      <Modal />
     </>
   );
 }
