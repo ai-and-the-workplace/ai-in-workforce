@@ -36,8 +36,8 @@ export const TASKS = {
   'Fact Checking': {
     title: 'Fact Checking',
     instructions: [
-      'Please use the following websites to find a paragraph and ask AI to fact check it.',
-      'Enter the prompt: “Fact check: <mark>copy and paste a paragraph</mark>."',
+      'Please use the following websites to find a headline and ask AI to fact check it.',
+      'Enter the prompt: “Fact check: <mark>copy and paste a headline</mark>."',
       'Fact check a true news item (e.g., from the business world) from <a href="https://forbes.com" target="_blank"><u>forbes.com</u></a>.',
       'Fact check a true news item (e.g., from the business world) from <a href="https://snopes.com" target="_blank" class="underline"><u>snopes.com</u></a>.',
       'Fact check a paragraph from <a href="https://wikipedia.org" target="_blank" class="underline"><u>wikipedia.org</u></a>.',
@@ -49,9 +49,9 @@ export const TASKS = {
     instructions: [
       'Please use the AI to write a recommendation letter based on the scenarios below:',
       'Please copy and paste the prompts into the generate section within the AI tool and replace the highlighted portion. You may use the prompts given in the brackets.',
-      'Write a 300 word recommendation for a former colleague in your marketing company. The colleague did a relatively good job and was friendly with others.',
-      'Write a 500 word recommendation for a current intern for a position in financial consulting company.',
-      "Write a 500 word recommendation letter for <mark>a scholarship</mark> based on the scholarship's criteria (i.e. Rhodes Scholarship, McArthur Fellowship, Marshall scholarships).",
+      'Write a recommendation for a former colleague in your marketing company. The colleague did a relatively good job and was friendly with others.',
+      'Write a recommendation for a current intern for a position in financial consulting company.',
+      "Write a recommendation letter for <mark>a scholarship</mark> based on the scholarship's criteria (i.e. Rhodes Scholarship, McArthur Fellowship, Marshall scholarships).",
       '*Fill in the highlighted segments based on your personal experiences.',
     ],
   },

@@ -58,14 +58,14 @@ export default function GPT3() {
           value={promptInput}
           onChange={promptChangeHandler}
           className="h-[128px] resize-none rounded-t-xl rounded-b-none border border-b-0 border-darkBlue bg-transparent py-3 px-4 text-darkBlue outline-none md:hidden"
-          placeholder="Write a tagline for an ice cream shop."
+          placeholder="Enter your prompt here."
         />
         <input
           type="text"
           value={promptInput}
           onChange={promptChangeHandler}
           className="hidden flex-grow rounded-l-xl rounded-r-none border border-r-0 border-darkBlue bg-transparent py-4 px-5 text-lg outline-none md:block md:rounded-l-2xl"
-          placeholder="Write a tagline for an ice cream shop."
+          placeholder="Enter your prompt here."
         />
         <Button
           hierarchy="primary"
