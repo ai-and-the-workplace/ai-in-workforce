@@ -6,7 +6,7 @@ import CheckBox from '../UI/CheckBox';
 
 const TEXT = [
   'In this study, you will be asked to provide some basic information about yourself, about your workplace experiences and attitudes, as well as perform several tasks that one may normally encounter in a work context.',
-  'The study lasts around 30 minutes and you will be compensated with XXXX.',
+  'The study lasts around 30 minutes and you will be compensated for your time after completing the <strong>entire</strong> study.',
 ];
 
 export default function Introduction() {
