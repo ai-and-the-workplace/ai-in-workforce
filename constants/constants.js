@@ -2,14 +2,14 @@ export const TASKS = {
   'Content Creation': {
     title: 'Content Creation',
     instructions: [
-      'You have just been hired as a content creator for your company. Your job in this task will be to create social media captions by using the prompts below. Please use the AI to help you do it.',
-      'Please copy and paste the non-highlighted portion in the generate field and replace the highlighted portion with a scenario of your choosing.',
-      'Write a 50 word tweet about <mark>a project in your workplace</mark>.',
-      'Write a funny and short instagram caption about <mark>a new initiative in your workplace</mark>.',
-      'Write a sarcastic and short instagram caption about <mark>a celebration</mark>.',
-      'Write a Facebook post to summarize <mark>the initiatives in your workplace</mark>.',
-      'Promote <mark>an object</mark> so that someone will buy it on an online marketplace.',
-      'Write a meaningful post about <mark>a success in your workplace</mark>.',
+      'You have just been hired as a content creator for your company. Your job in this task will be to create social media captions by using the prompts below.  Please use the AI to help you do it.',
+      'Please copy and paste the non-highlighted portion in the generate field and replace the highlighted portion with a scenario of your choosing (i.e. the examples).',
+      'Write a 50 word tweet about <mark>a project</mark> (i.e. construction, graphic design, marketing).',
+      'Write a funny and short instagram caption about <mark>a new initiative in your workplace</mark> (i.e. release of a paper, success of a product launch, creating a demo).',
+      'Write a sarcastic and short instagram caption about <mark>a celebration</mark> (i.e. birthday, work anniversary, end of fiscal year).',
+      'Write a facebook post to summarize <mark>the initiatives in your workplace</mark> (i.e. Mental health initiative, Volunteer initiative, Charity Drive, Strategic plan launch).',
+      'Promote <mark>an object</mark> (i.e. furniture, electronics, appliances) so that someone will buy it on an online marketplace.',
+      'Write a meaningful post about <mark>your workplace</mark>.',
     ],
   },
   'Interview Questions': {

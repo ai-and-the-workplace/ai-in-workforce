@@ -4,7 +4,9 @@ import ProgressContext from '../../store/progress';
 export default function Timer() {
   const progressContext = useContext(ProgressContext);
 
-  const [minutes, setMinutes] = useState(4);
+  const [minutes, setMinutes] = useState(
+    progressContext.progress.screen === 'Content Creation' ? 4 : 3
+  );
   const [seconds, setSeconds] = useState(0);
 
   useEffect(() => {

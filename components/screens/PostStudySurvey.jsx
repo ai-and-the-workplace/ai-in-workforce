@@ -1,12 +1,9 @@
-import { useState, useContext } from 'react';
+import { useContext } from 'react';
 import ProgressContext from '../../store/progress';
-import ExternalLink from '../UI/ExternalLink';
 import { ContinueButton } from '../UI/Button';
 
 export default function PostStudyServey() {
   const progressContext = useContext(ProgressContext);
-
-  const [buttonEnabled, setButtonEnabled] = useState(false);
 
   return (
     <div className="m-horizontal">
@@ -17,16 +14,14 @@ export default function PostStudyServey() {
         <strong>{progressContext.progress.id}</strong>. Please enter it into the
         survey.
       </p>
-      <div className="mb-16">
-        <ExternalLink
-          text="Post-Study Survey"
-          link="https://www.surveymonkey.com/r/CL6JNYL"
-          onClick={() => setButtonEnabled(true)}
+      <div className="mb-16 max-w-full">
+        <iframe
+          className="h-[400px] w-full"
+          src="https://www.surveymonkey.com/r/CL6JNYL"
         />
       </div>
       <ContinueButton
         onClick={() => progressContext.changeScreen('Conclusion')}
-        disabled={!buttonEnabled}
       >
         Continue
       </ContinueButton>
