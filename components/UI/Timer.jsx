@@ -4,9 +4,20 @@ import ProgressContext from '../../store/progress';
 export default function Timer() {
   const progressContext = useContext(ProgressContext);
 
-  const [minutes, setMinutes] = useState(
-    progressContext.progress.screen === 'Content Creation' ? 4 : 3
-  );
+  let surveyDuration;
+
+  if (progressContext.progress.screen === 'Content Creation') {
+    surveyDuration = 4;
+  } else if (
+    progressContext.progress.screen === 'Interview Questions' ||
+    progressContext.progress.screen === 'Fact Checking'
+  ) {
+    surveyDuration = 3;
+  } else {
+    surveyDuration = 2;
+  }
+
+  const [minutes, setMinutes] = useState(surveyDuration);
   const [seconds, setSeconds] = useState(0);
 
   useEffect(() => {

@@ -12,9 +12,9 @@ export default function Landing() {
           AI and Workforce
         </h1>
         <p className="mx-auto max-w-[640px] text-base leading-loose text-darkBlue sm:text-xl sm:leading-loose md:mb-16">
-          People have pre-conceived notions about AI. Through this study, we
-          hope to understand how people&apos;s perceptions of AI change, after
-          having interacted with such technologies.
+          In this study, you will be asked to provide some basic information
+          about yourself, your workplace experiences and attitudes, and perform
+          several tasks that one may normally encounter in a work context.
         </p>
         <div className="hidden md:block">
           <ContinueButton

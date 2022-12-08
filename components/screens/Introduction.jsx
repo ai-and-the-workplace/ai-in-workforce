@@ -21,7 +21,7 @@ export default function Introduction() {
       <div className="mb-16">
         <CheckBox
           id="agreement"
-          label="Are you willing to commit to taking part in this study to the best of your ability?"
+          label="I am willing to commit to taking part in this study to the best of my ability."
           value={agree}
           valueChangeHandler={() => setAgree((prevAgree) => !prevAgree)}
         />

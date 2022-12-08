@@ -10,6 +10,7 @@ export const TASKS = {
       'Write a facebook post to summarize <mark>the initiatives in your workplace</mark> (i.e. Mental health initiative, Volunteer initiative, Charity Drive, Strategic plan launch).',
       'Promote <mark>an object</mark> (i.e. furniture, electronics, appliances) so that someone will buy it on an online marketplace.',
       'Write a meaningful post about <mark>your workplace</mark>.',
+      'If the AI tool is not generating a response, please refresh the page. The timer will begin again from the beginning.',
     ],
   },
   'Interview Questions': {
@@ -20,6 +21,7 @@ export const TASKS = {
       'Create 10 questions for hiring a <mark>work position</mark> (i.e. car salesman, nurse, etc).',
       'Create 8 interview questions for a research study on a <mark>topic</mark> (customer satisfaction, patient experience, etc).',
       'Create 4 preliminary screening questions for hiring <mark>a position</mark>.',
+      'If the AI tool is not generating a response, please refresh the page. The timer will begin again from the beginning.',
     ],
   },
   'Making Predictions': {
@@ -31,6 +33,7 @@ export const TASKS = {
       'What will be the exchange rate for euros and dollars in 2025?',
       'Will we see a growth in news items written by AI?',
       'Will we see a growth or decline in customers ordering food online?',
+      'If the AI tool is not generating a response, please refresh the page. The timer will begin again from the beginning.',
     ],
   },
   'Fact Checking': {
@@ -42,6 +45,7 @@ export const TASKS = {
       'Fact check a true news item (e.g., from the business world) from <a href="https://snopes.com" target="_blank" class="underline"><u>snopes.com</u></a>.',
       'Fact check a paragraph from <a href="https://wikipedia.org" target="_blank" class="underline"><u>wikipedia.org</u></a>.',
       "*Alter the content from the website to test AI's fact checking ability.",
+      'If the AI tool is not generating a response, please refresh the page. The timer will begin again from the beginning.',
     ],
   },
   'Writing a Recommendation Letter': {
@@ -53,6 +57,7 @@ export const TASKS = {
       'Write a recommendation for a current intern for a position in financial consulting company.',
       "Write a recommendation letter for <mark>a scholarship</mark> based on the scholarship's criteria (i.e. Rhodes Scholarship, McArthur Fellowship, Marshall scholarships).",
       '*Fill in the highlighted segments based on your personal experiences.',
+      'If the AI tool is not generating a response, please refresh the page. The timer will begin again from the beginning.',
     ],
   },
 };
