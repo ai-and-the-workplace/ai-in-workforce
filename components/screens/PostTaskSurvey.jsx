@@ -9,20 +9,17 @@ export default function PostTaskSurvey() {
   let surveyLink;
 
   if (progressContext.progress.tasksCompleted === 1) {
-    nextScreen = 'Interview Questions';
-    surveyLink = 'https://www.surveymonkey.com/r/CL68FB2';
-  } else if (progressContext.progress.tasksCompleted === 2) {
-    nextScreen = 'Making Predictions';
-    surveyLink = 'https://www.surveymonkey.com/r/RFVYSDF';
-  } else if (progressContext.progress.tasksCompleted === 3) {
     nextScreen = 'Fact Checking';
-    surveyLink = 'https://www.surveymonkey.com/r/RFYMDQ2';
-  } else if (progressContext.progress.tasksCompleted === 4) {
+    surveyLink = 'https://www.surveymonkey.com/r/RFVYSDF';
+  } else if (progressContext.progress.tasksCompleted === 2) {
     nextScreen = 'Writing a Recommendation Letter';
     surveyLink = 'https://www.surveymonkey.com/r/Q8Q6G8V';
+  } else if (progressContext.progress.tasksCompleted === 3) {
+    nextScreen = 'Content Creation';
+    surveyLink = 'https://www.surveymonkey.com/r/Q8TYNHJ';
   } else {
     nextScreen = 'Post Study Survey';
-    surveyLink = 'https://www.surveymonkey.com/r/Q8TYNHJ';
+    surveyLink = 'https://www.surveymonkey.com/r/CL68FB2';
   }
 
   return (
@@ -35,7 +32,7 @@ export default function PostTaskSurvey() {
         survey. Press continue until you finished answered all the questions.
       </p>
       <div className="mb-16 max-w-full">
-        <iframe className="h-[400px] w-full" src={surveyLink} />
+        <iframe className="h-[600px] w-full" src={surveyLink} />
       </div>
       <ContinueButton
         onClick={() => {

@@ -12,7 +12,7 @@
   }
 
   .m-horizontal {
-    @apply mx-5 max-w-[680px] xs:mx-9 md:mx-auto;
+    @apply mx-5 max-w-[720px] xs:mx-9 md:mx-auto;
   }
 
   .transition-300 {

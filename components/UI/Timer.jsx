@@ -6,19 +6,18 @@ export default function Timer() {
 
   let surveyDuration;
 
-  if (progressContext.progress.screen === 'Content Creation') {
-    surveyDuration = 4;
-  } else if (
+  if (
     progressContext.progress.screen === 'Interview Questions' ||
-    progressContext.progress.screen === 'Fact Checking'
+    progressContext.progress.screen === 'Fact Checking' ||
+    progressContext.progress.screen === 'Content Creation'
   ) {
     surveyDuration = 3;
   } else {
     surveyDuration = 2;
   }
 
-  const [minutes, setMinutes] = useState(surveyDuration);
-  const [seconds, setSeconds] = useState(0);
+  const [minutes, setMinutes] = useState(0);
+  const [seconds, setSeconds] = useState(surveyDuration);
 
   useEffect(() => {
     let timerInterval = setInterval(() => {

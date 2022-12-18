@@ -17,7 +17,7 @@ export default function PostStudyServey() {
       </p>
       <div className="mb-16 max-w-full">
         <iframe
-          className="h-[400px] w-full"
+          className="h-[600px] w-full"
           src="https://www.surveymonkey.com/r/CL6JNYL"
         />
       </div>

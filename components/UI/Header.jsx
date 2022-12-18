@@ -34,7 +34,7 @@ export default function Header() {
             icon={upRightArrow}
             onClick={() =>
               window.open(
-                'https://ihpme.utoronto.ca/2022/06/beyond-myths-dr-meena-andiappan-to-study-attitudes-and-perceptions-of-ai-in-the-workplace/',
+                'https://ihpme.utoronto.ca/faculty/meena-andiappan/',
                 '_blank'
               )
             }

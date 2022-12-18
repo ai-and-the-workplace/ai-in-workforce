@@ -1,4 +1,4 @@
-import { useState, useContext } from 'react';
+import { useContext } from 'react';
 import ProgressContext from '../../store/progress';
 import { ContinueButton } from '../UI/Button';
 
@@ -17,12 +17,12 @@ export default function PreStudySurvey() {
       </p>
       <div className="mb-16 max-w-full">
         <iframe
-          className="h-[400px] w-full"
+          className="h-[600px] w-full"
           src="https://www.surveymonkey.com/r/CLHZQ9T"
         />
       </div>
       <ContinueButton
-        onClick={() => progressContext.changeScreen('Content Creation')}
+        onClick={() => progressContext.changeScreen('Interview Questions')}
       >
         Continue
       </ContinueButton>

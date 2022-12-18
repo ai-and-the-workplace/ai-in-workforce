@@ -55,21 +55,19 @@ export const ProgressContextProvider = ({ children }) => {
     }
 
     setProgress({
-      id: Math.floor(Math.random() * 1000000 + 1),
+      id: Math.floor(Math.random() * 500 + 1),
       screen: 'Landing',
       tasks: {
-        'Content Creation': false,
         'Interview Questions': false,
-        'Making Predictions': false,
         'Fact Checking': false,
+        'Content Creation': false,
         'Writing a Recommendation Letter': false,
       },
       responses: {
-        'Content Creation': [],
         'Interview Questions': [],
-        'Making Predictions': [],
         'Fact Checking': [],
         'Writing a Recommendation Letter': [],
+        'Content Creation': [],
       },
       tasksCompleted: 0,
       doneStudy: false,

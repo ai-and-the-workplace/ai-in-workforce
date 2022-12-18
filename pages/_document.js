@@ -2,7 +2,7 @@ import { Html, Head, Main, NextScript } from 'next/document';
 
 export default function Document() {
   return (
-    <Html className="overflow-hidden">
+    <Html className="">
       <Head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
@@ -15,7 +15,7 @@ export default function Document() {
           rel="stylesheet"
         />
       </Head>
-      <body className="absolute inset-0 m-0 overflow-x-hidden overflow-y-scroll bg-white p-0">
+      <body className="m-0 overflow-x-hidden bg-white p-0">
         <Main />
         <NextScript />
       </body>

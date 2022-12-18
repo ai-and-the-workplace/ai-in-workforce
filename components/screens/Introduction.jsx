@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import ProgressContext from '../../store/progress';
 import Paragraphs from '../UI/Paragraphs';
 import { ContinueButton } from '../UI/Button';

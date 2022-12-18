@@ -36,16 +36,20 @@ export default function Home() {
   } else if (curScreen === 'Instructions') {
     screen = <Instructions />;
   } else if (curScreen === 'Pre-Study Survey') {
+    window.scrollTo(0, 0);
     screen = <PreStudySurvey />;
   } else if (curScreen === 'Workplace Tasks') {
     screen = <WorkplaceTasks />;
   } else if (curScreen === 'Post Task Survey') {
+    window.scrollTo(0, 0);
     screen = <PostTaskSurvey />;
   } else if (curScreen === 'Post Study Survey') {
+    window.scrollTo(0, 0);
     screen = <PostStudyServey />;
   } else if (curScreen === 'Conclusion') {
     screen = <Conclusion />;
   } else if (Object.hasOwn(TASKS, curScreen)) {
+    window.scrollTo(0, 0);
     screen = <GPT3 />;
   }
 
