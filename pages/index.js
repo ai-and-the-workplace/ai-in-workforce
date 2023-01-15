@@ -9,6 +9,7 @@ import Instructions from '../components/screens/Instructions';
 import PreStudySurvey from '../components/screens/PreStudySurvey';
 import WorkplaceTasks from '../components/screens/WorkplaceTasks';
 import GPT3 from '../components/screens/GPT3';
+import PreTaskSurvey from '../components/screens/PreTaskSurvey'
 import PostTaskSurvey from '../components/screens/PostTaskSurvey';
 import PostStudyServey from '../components/screens/PostStudySurvey';
 import Conclusion from '../components/screens/Conclusion';
@@ -40,6 +41,8 @@ export default function Home() {
     screen = <PreStudySurvey />;
   } else if (curScreen === 'Workplace Tasks') {
     screen = <WorkplaceTasks />;
+  } else if (curScreen === 'Pre-Task Survey') { 
+    screen = <PreTaskSurvey />
   } else if (curScreen === 'Post Task Survey') {
     window.scrollTo(0, 0);
     screen = <PostTaskSurvey />;
