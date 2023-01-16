@@ -10,25 +10,25 @@ export default function PostTaskSurvey() {
 
   if (progressContext.progress.tasksCompleted === 0) {
     nextScreen = 'Interview Questions';
-    surveyLink = 'https://www.surveymonkey.com/r/RFVYSDF';
+    surveyLink = 'https://www.surveymonkey.com/r/VBPPD6Y';
   } else if (progressContext.progress.tasksCompleted === 1) {
     nextScreen = 'Fact Checking';
-    surveyLink = 'https://www.surveymonkey.com/r/Q8Q6G8V';
+    surveyLink = 'https://www.surveymonkey.com/r/VB6HLYX';
   } else if (progressContext.progress.tasksCompleted === 2) {
     nextScreen = 'Writing a Recommendation Letter';
-    surveyLink = 'https://www.surveymonkey.com/r/Q8TYNHJ';
+    surveyLink = 'https://www.surveymonkey.com/r/TFGGK2T';
   } else {
     nextScreen = 'Content Creation';
-    surveyLink = 'https://www.surveymonkey.com/r/CL68FB2';
+    surveyLink = 'https://www.surveymonkey.com/r/TFG6SRZ';
   }
 
   return (
     <div className="m-horizontal">
       <h1 className="title mb-6">Pre-Task Survey</h1>
       <p className="body mb-6 leading-loose md:mb-9">
-        Your participant ID is{' '}
-        <strong>{progressContext.progress.id}</strong>. Please enter it into the
-        survey. Press continue until you finished answered all the questions.
+        Your participant ID is <strong>{progressContext.progress.id}</strong>.
+        Please enter it into the survey. Press continue until you finished
+        answered all the questions.
       </p>
       <div className="mb-16 max-w-full">
         <iframe className="h-[600px] w-full" src={surveyLink} />
