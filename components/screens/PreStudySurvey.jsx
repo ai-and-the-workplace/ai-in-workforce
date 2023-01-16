@@ -22,7 +22,7 @@ export default function PreStudySurvey() {
         />
       </div>
       <ContinueButton
-        onClick={() => progressContext.changeScreen('Interview Questions')}
+        onClick={() => progressContext.changeScreen('Pre-Task Survey')}
       >
         Continue
       </ContinueButton>

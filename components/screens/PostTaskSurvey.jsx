@@ -8,13 +8,13 @@ export default function PostTaskSurvey() {
   let surveyLink;
 
   if (progressContext.progress.tasksCompleted === 1) {
-    surveyLink = 'https://www.surveymonkey.com/r/RFVYSDF';
+    surveyLink = 'https://www.surveymonkey.com/r/7V9WVCY';
   } else if (progressContext.progress.tasksCompleted === 2) {
-    surveyLink = 'https://www.surveymonkey.com/r/Q8Q6G8V';
+    surveyLink = 'https://www.surveymonkey.com/r/T5FGFNX';
   } else if (progressContext.progress.tasksCompleted === 3) {
-    surveyLink = 'https://www.surveymonkey.com/r/Q8TYNHJ';
+    surveyLink = 'https://www.surveymonkey.com/r/T5BBFKL';
   } else {
-    surveyLink = 'https://www.surveymonkey.com/r/CL68FB2';
+    surveyLink = 'https://www.surveymonkey.com/r/T5BS3T2';
   }
 
   return (
@@ -31,7 +31,11 @@ export default function PostTaskSurvey() {
       </div>
       <ContinueButton
         onClick={() => {
-          if (progressContext.tasksCompleted < 4) { progressContext.changeScreen('Pre-Task Survey'); } else {progressContext.changeScreen('Post Study Survey')}
+          if (progressContext.progress.tasksCompleted < 4) {
+            progressContext.changeScreen('Pre-Task Survey');
+          } else {
+            progressContext.changeScreen('Post Study Survey');
+          }
         }}
       >
         Continue
