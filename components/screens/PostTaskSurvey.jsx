@@ -24,7 +24,7 @@ export default function PostTaskSurvey() {
         Fill out this survey before starting the next task. Please wait for the
         survey to pop up as it takes a few seconds. Your participant ID is{' '}
         <strong>{progressContext.progress.id}</strong>. Please enter it into the
-        survey. Press continue until you finished answered all the questions.
+        survey. Do not press continue until you have answered all the questions.
       </p>
       <div className="mb-16 max-w-full">
         <iframe className="h-[600px] w-full" src={surveyLink} />
