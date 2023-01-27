@@ -27,8 +27,8 @@ export default function PostTaskSurvey() {
       <h1 className="title mb-6">Pre-Task Survey</h1>
       <p className="body mb-6 leading-loose md:mb-9">
         Your participant ID is <strong>{progressContext.progress.id}</strong>.
-        Please enter it into the survey. Press continue until you finished
-        answered all the questions.
+        Please enter it into the survey. Do not press continue until you
+        finished answered all the questions.
       </p>
       <div className="mb-16 max-w-full">
         <iframe className="h-[600px] w-full" src={surveyLink} />
