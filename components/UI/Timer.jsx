@@ -16,8 +16,8 @@ export default function Timer() {
     surveyDuration = 2;
   }
 
-  const [minutes, setMinutes] = useState(surveyDuration);
-  const [seconds, setSeconds] = useState(0);
+  const [minutes, setMinutes] = useState(0);
+  const [seconds, setSeconds] = useState(surveyDuration);
 
   useEffect(() => {
     let timerInterval = setInterval(() => {

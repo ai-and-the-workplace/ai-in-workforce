@@ -15,11 +15,11 @@ export default function PostTaskSurvey() {
     nextScreen = 'Fact Checking';
     surveyLink = 'https://www.surveymonkey.com/r/VB6HLYX';
   } else if (progressContext.progress.tasksCompleted === 2) {
-    nextScreen = 'Writing a Recommendation Letter';
-    surveyLink = 'https://www.surveymonkey.com/r/TFGGK2T';
-  } else {
     nextScreen = 'Content Creation';
     surveyLink = 'https://www.surveymonkey.com/r/TFG6SRZ';
+  } else {
+    nextScreen = 'Writing a Recommendation Letter';
+    surveyLink = 'https://www.surveymonkey.com/r/TFGGK2T';
   }
 
   return (

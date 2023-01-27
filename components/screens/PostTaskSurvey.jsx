@@ -12,9 +12,9 @@ export default function PostTaskSurvey() {
   } else if (progressContext.progress.tasksCompleted === 2) {
     surveyLink = 'https://www.surveymonkey.com/r/T5FGFNX';
   } else if (progressContext.progress.tasksCompleted === 3) {
-    surveyLink = 'https://www.surveymonkey.com/r/T5BBFKL';
-  } else {
     surveyLink = 'https://www.surveymonkey.com/r/T5BS3T2';
+  } else {
+    surveyLink = 'https://www.surveymonkey.com/r/T5BBFKL';
   }
 
   return (

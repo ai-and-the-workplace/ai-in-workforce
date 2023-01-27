@@ -66,8 +66,8 @@ export const ProgressContextProvider = ({ children }) => {
       responses: {
         'Interview Questions': [],
         'Fact Checking': [],
-        'Writing a Recommendation Letter': [],
         'Content Creation': [],
+        'Writing a Recommendation Letter': [],
       },
       tasksCompleted: 0,
       doneStudy: false,
