@@ -6,7 +6,7 @@ import CheckBox from '../UI/CheckBox';
 import { ContinueButton } from '../UI/Button';
 
 const TEXT = [
-  'Before you continue with the study, please read and confirm that you agree with the consent form below.',
+  'Before you continue with the study, please read and confirm that you agree with the consent form below. The consent form will open in a new tab. After reading through it, please navigate back to the experiment and click continue to give electronic consent.',
 ];
 
 export default function Consent() {

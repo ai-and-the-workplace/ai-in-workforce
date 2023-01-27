@@ -32,7 +32,7 @@ export default function PostTaskSurvey() {
       <ContinueButton
         onClick={() => {
           if (progressContext.progress.tasksCompleted < 4) {
-            progressContext.changeScreen('Pre-Task Survey');
+            progressContext.changeScreen('Task Introduction');
           } else {
             progressContext.changeScreen('Post Study Survey');
           }

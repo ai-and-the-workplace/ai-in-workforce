@@ -5,8 +5,8 @@ import { ContinueButton } from '../UI/Button';
 import CheckBox from '../UI/CheckBox';
 
 const TEXT = [
-  'In this study, you will be asked to provide some basic information about yourself, as well as perform several tasks that one may normally encounter in a work context using AI',
-  'The study lasts around 30 minutes and you will be compensated for your time after completing the <strong>entire</strong> study.',
+  'In this study, you will be asked to perform several tasks that one may normally encounter in a work context using AI and answer a few surveys.',
+  'The study lasts around <mark>30</mark> minutes and you will be compensated for your time after completing the <strong>entire</strong> study.',
 ];
 
 export default function Introduction() {

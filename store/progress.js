@@ -98,7 +98,7 @@ export const ProgressContextProvider = ({ children }) => {
   function completeTask(task) {
     setProgress((prevProgress) => ({
       ...progress,
-      screen: 'Post Task Survey',
+      screen: 'Task Conclusion',
       tasks: { ...progress.tasks, [task]: { completed: true } },
       tasksCompleted: prevProgress.tasksCompleted + 1,
     }));
