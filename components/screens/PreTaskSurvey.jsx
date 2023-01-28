@@ -9,11 +9,11 @@ export default function PostTaskSurvey() {
   let surveyLink;
 
   if (progressContext.progress.tasksCompleted === 0) {
-    nextScreen = 'Interview Questions';
-    surveyLink = 'https://www.surveymonkey.com/r/VBPPD6Y';
-  } else if (progressContext.progress.tasksCompleted === 1) {
     nextScreen = 'Fact Checking';
     surveyLink = 'https://www.surveymonkey.com/r/VB6HLYX';
+  } else if (progressContext.progress.tasksCompleted === 1) {
+    nextScreen = 'Interview Questions';
+    surveyLink = 'https://www.surveymonkey.com/r/VBPPD6Y';
   } else if (progressContext.progress.tasksCompleted === 2) {
     nextScreen = 'Content Creation';
     surveyLink = 'https://www.surveymonkey.com/r/TFG6SRZ';

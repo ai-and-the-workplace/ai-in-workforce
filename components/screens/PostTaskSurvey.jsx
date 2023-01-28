@@ -8,9 +8,9 @@ export default function PostTaskSurvey() {
   let surveyLink;
 
   if (progressContext.progress.tasksCompleted === 1) {
-    surveyLink = 'https://www.surveymonkey.com/r/7V9WVCY';
-  } else if (progressContext.progress.tasksCompleted === 2) {
     surveyLink = 'https://www.surveymonkey.com/r/T5FGFNX';
+  } else if (progressContext.progress.tasksCompleted === 2) {
+    surveyLink = 'https://www.surveymonkey.com/r/7V9WVCY';
   } else if (progressContext.progress.tasksCompleted === 3) {
     surveyLink = 'https://www.surveymonkey.com/r/T5BS3T2';
   } else {

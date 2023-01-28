@@ -5,15 +5,15 @@ import { ContinueButton } from '../UI/Button';
 
 const TEXTS = [
   {
-    title: 'Interview Task Introduction',
-    paragraphs: [
-      'The first task is using AI to help with the Interview Process. After pressing continue, you will be directed to a pre-task survey to complete. Ensure you answer all questions on SurveyMonkey.',
-    ],
-  },
-  {
     title: 'Fact Checking Introduction',
     paragraphs: [
       'The second task is using AI to help with Fact Checking. After pressing continue, you will be directed to a pre-task survey to complete. Ensure you answer all questions on SurveyMonkey.',
+    ],
+  },
+  {
+    title: 'Interview Task Introduction',
+    paragraphs: [
+      'The first task is using AI to help with the Interview Process. After pressing continue, you will be directed to a pre-task survey to complete. Ensure you answer all questions on SurveyMonkey.',
     ],
   },
   {

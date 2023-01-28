@@ -4,8 +4,8 @@ import Paragraphs from '../UI/Paragraphs';
 import { ContinueButton } from '../UI/Button';
 
 const TITLES = [
-  'Interview Task Complete',
   'Fact Checking Complete',
+  'Interview Task Complete',
   'Content Creation Complete',
   'Writing a Recommendation Letter Complete',
 ];
