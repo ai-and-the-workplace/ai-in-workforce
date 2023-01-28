@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+import Head from 'next/head';
 import ProgressContext from '../store/progress';
 import Header from '../components/UI/Header';
 import Landing from '../components/screens/Landing';
@@ -16,6 +17,7 @@ import PostTaskSurvey from '../components/screens/PostTaskSurvey';
 import PostStudyServey from '../components/screens/PostStudySurvey';
 import Conclusion from '../components/screens/Conclusion';
 import { TASKS } from '../constants/constants';
+import logo from '../public/icons/u-of-t.png';
 
 export default function Home() {
   const progressContext = useContext(ProgressContext);
@@ -64,6 +66,10 @@ export default function Home() {
 
   return (
     <>
+      <Head>
+        <title>AI in Workforce Study</title>
+        <link rel="icon" type="image/x-icon" href="/icons/favicon.png" />
+      </Head>
       <Header />
       {screen}
     </>
