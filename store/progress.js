@@ -56,6 +56,7 @@ export const ProgressContextProvider = ({ children }) => {
 
     setProgress({
       id: Math.floor(Math.random() * 500 + 1),
+      prolificID: '',
       screen: 'Landing',
       tasks: {
         'Interview Questions': false,
@@ -72,6 +73,10 @@ export const ProgressContextProvider = ({ children }) => {
       tasksCompleted: 0,
       doneStudy: false,
     });
+  }
+
+  function setProlificID(value) {
+    setProgress({ ...progress, prolificID: value });
   }
 
   function changeScreen(newScreen) {
@@ -109,6 +114,7 @@ export const ProgressContextProvider = ({ children }) => {
       const docRef = await addDoc(collection(db, 'study-1'), {
         id: progress.id,
         responses: progress.responses,
+        prolificID: progress.prolificID,
       });
       console.log('Document written with ID: ', docRef.id);
     } catch (e) {
@@ -118,7 +124,13 @@ export const ProgressContextProvider = ({ children }) => {
 
   return (
     <ProgressContext.Provider
-      value={{ progress, changeScreen, completeTask, addInteraction }}
+      value={{
+        progress,
+        changeScreen,
+        completeTask,
+        addInteraction,
+        setProlificID,
+      }}
     >
       {children}
     </ProgressContext.Provider>

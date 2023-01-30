@@ -4,8 +4,9 @@ import ProgressContext from '../store/progress';
 import Header from '../components/UI/Header';
 import Landing from '../components/screens/Landing';
 import Introduction from '../components/screens/Introduction';
-import AboutTheStudy from '../components/screens/AboutTheStudy';
+import Prolific from '../components/screens/Prolific';
 import Consent from '../components/screens/Consent';
+import AboutTheStudy from '../components/screens/AboutTheStudy';
 import Instructions from '../components/screens/Instructions';
 import PreStudySurvey from '../components/screens/PreStudySurvey';
 import WorkplaceTasks from '../components/screens/WorkplaceTasks';
@@ -17,7 +18,6 @@ import PostTaskSurvey from '../components/screens/PostTaskSurvey';
 import PostStudyServey from '../components/screens/PostStudySurvey';
 import Conclusion from '../components/screens/Conclusion';
 import { TASKS } from '../constants/constants';
-import logo from '../public/icons/u-of-t.png';
 
 export default function Home() {
   const progressContext = useContext(ProgressContext);
@@ -38,6 +38,8 @@ export default function Home() {
     screen = <AboutTheStudy />;
   } else if (curScreen === 'Consent') {
     screen = <Consent />;
+  } else if (curScreen === 'Prolific') {
+    screen = <Prolific />;
   } else if (curScreen === 'Instructions') {
     screen = <Instructions />;
   } else if (curScreen === 'Pre-Study Survey') {

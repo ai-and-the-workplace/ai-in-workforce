@@ -34,7 +34,7 @@ export default function Consent() {
       </div>
       <ContinueButton
         disabled={!agree}
-        onClick={() => progressContext.changeScreen('Instructions')}
+        onClick={() => progressContext.changeScreen('Prolific')}
       >
         Continue
       </ContinueButton>
