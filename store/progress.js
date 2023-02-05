@@ -55,7 +55,7 @@ export const ProgressContextProvider = ({ children }) => {
     }
 
     setProgress({
-      id: Math.floor(Math.random() * 500 + 1),
+      id: Math.floor(Math.random() * 1500 + 500),
       prolificID: '',
       screen: 'Landing',
       tasks: {
