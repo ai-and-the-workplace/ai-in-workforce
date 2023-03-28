@@ -17,7 +17,7 @@ export default function Timer() {
   }
 
   const [minutes, setMinutes] = useState(0);
-  const [seconds, setSeconds] = useState(1);
+  const [seconds, setSeconds] = useState(45);
 
   useEffect(() => {
     let timerInterval = setInterval(() => {
