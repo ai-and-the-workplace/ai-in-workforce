@@ -15,7 +15,7 @@ export default function AboutTheStudy() {
     <div className="m-horizontal">
       <h1 className="title mb-6">About The Study</h1>
       <Paragraphs paragraphs={TEXT} mb="mb-14" />
-      <ContinueButton onClick={() => progressContext.changeScreen('Consent')}>
+      <ContinueButton onClick={() => progressContext.changeScreen('ChatGPT')}>
         Continue
       </ContinueButton>
     </div>

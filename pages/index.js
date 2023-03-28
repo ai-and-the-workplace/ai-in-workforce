@@ -5,6 +5,8 @@ import Header from '../components/UI/Header';
 import Landing from '../components/screens/Landing';
 import Introduction from '../components/screens/Introduction';
 import Prolific from '../components/screens/Prolific';
+import ChatGPT from '../components/screens/ChatGPT';
+import NotEligible from '../components/screens/NotEligible';
 import Consent from '../components/screens/Consent';
 import AboutTheStudy from '../components/screens/AboutTheStudy';
 import Instructions from '../components/screens/Instructions';
@@ -36,6 +38,10 @@ export default function Home() {
     screen = <Introduction />;
   } else if (curScreen === 'About The Study') {
     screen = <AboutTheStudy />;
+  } else if (curScreen === 'ChatGPT') {
+    screen = <ChatGPT />;
+  } else if (curScreen === 'Not Eligible') {
+    screen = <NotEligible />;
   } else if (curScreen === 'Consent') {
     screen = <Consent />;
   } else if (curScreen === 'Prolific') {

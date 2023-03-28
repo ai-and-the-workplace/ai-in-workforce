@@ -19,13 +19,17 @@ export default function TaskConclusion() {
     <div className="m-horizontal">
       <h1 className="title mb-6">{TITLES[taskIdx - 1]}</h1>
       <Paragraphs
-        paragraphs={[
-          'Thank you for completing this task. Please press continue to be directed to the post-task survey. Ensure you answer all questions on SurveyMonkey.',
-        ]}
+        paragraphs={['Thank you for completing this task.']}
         mb="mb-14"
       />
       <ContinueButton
-        onClick={() => progressContext.changeScreen('Post Task Survey')}
+        onClick={() => {
+          if (progressContext.progress.tasksCompleted < 4) {
+            progressContext.changeScreen('Task Introduction');
+          } else {
+            progressContext.changeScreen('Post Study Survey');
+          }
+        }}
       >
         Continue
       </ContinueButton>
