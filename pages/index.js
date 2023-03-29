@@ -20,7 +20,8 @@ import PostTaskSurvey from '../components/screens/PostTaskSurvey';
 import PostStudyServey from '../components/screens/PostStudySurvey';
 import Conclusion from '../components/screens/Conclusion';
 import { TASKS } from '../constants/constants';
-import Attitudes from '../components/screens/Attitudes';
+import Attitudes1 from '../components/screens/Attitudes1';
+import Attitudes2 from '../components/screens/Attitudes2';
 
 export default function Home() {
   const progressContext = useContext(ProgressContext);
@@ -52,9 +53,11 @@ export default function Home() {
   } else if (curScreen === 'Pre-Study Survey') {
     window.scrollTo(0, 0);
     screen = <PreStudySurvey />;
-  } else if (curScreen === 'Attitudes') {
+  } else if (curScreen === 'Attitudes 1') {
     window.scrollTo(0, 0);
-    screen = <Attitudes />;
+    screen = <Attitudes1 />;
+  } else if (curScreen === 'Attitudes 2') {
+    screen = <Attitudes2 />;
   } else if (curScreen === 'Workplace Tasks') {
     screen = <WorkplaceTasks />;
   } else if (curScreen === 'Task Introduction') {

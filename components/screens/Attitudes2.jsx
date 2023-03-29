@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import ProgressContext from '../../store/progress';
 import { ContinueButton } from '../UI/Button';
 
-export default function Attitudes() {
+export default function Attitudes2() {
   const progressContext = useContext(ProgressContext);
 
   return (
@@ -12,12 +12,6 @@ export default function Attitudes() {
         Please complete these two questions. Do not press continue until
         clicking on done in SurveyMonkey.
       </p>
-      <div className="mb-8 max-w-full">
-        <iframe
-          className="h-[600px] w-full"
-          src="https://www.surveymonkey.com/r/L792H6X"
-        />
-      </div>
       <div className="mb-16 max-w-full">
         <iframe
           className="h-[600px] w-full"
@@ -25,7 +19,7 @@ export default function Attitudes() {
         />
       </div>
       <ContinueButton
-        onClick={() => progressContext.changeScreen('Workplace Tasks')}
+        onClick={() => progressContext.changeScreen('Conclusion')}
       >
         Continue
       </ContinueButton>

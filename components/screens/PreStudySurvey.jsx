@@ -21,7 +21,9 @@ export default function PreStudySurvey() {
           src="https://www.surveymonkey.com/r/CLHZQ9T"
         />
       </div>
-      <ContinueButton onClick={() => progressContext.changeScreen('Attitudes')}>
+      <ContinueButton
+        onClick={() => progressContext.changeScreen('Attitudes 1')}
+      >
         Continue
       </ContinueButton>
     </div>

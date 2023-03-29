@@ -22,7 +22,7 @@ export default function PostStudyServey() {
         />
       </div>
       <ContinueButton
-        onClick={() => progressContext.changeScreen('Conclusion')}
+        onClick={() => progressContext.changeScreen('Attitudes 2')}
       >
         Continue
       </ContinueButton>
