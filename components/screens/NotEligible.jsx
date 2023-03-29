@@ -4,6 +4,7 @@ import Paragraphs from '../UI/Paragraphs';
 const TEXT = [
   'Unfortunately, you are not eligible to participate in this study.',
   'You will be compensated for your time.',
+  'Please enter this completion code to manually enter on Prolific to complete the study: C1EJXYHD.',
 ];
 
 export default function NotEligible() {
