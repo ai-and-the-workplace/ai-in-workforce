@@ -6,7 +6,7 @@ import { ContinueButton } from '../UI/Button';
 const TEXTS = [
   {
     title: 'Fact Checking Introduction',
-    paragraphs: ['The first is using AI to help with Fact Checking.'],
+    paragraphs: ['The first task is using AI to help with Fact Checking'],
   },
   {
     title: 'Interview Task Introduction',
@@ -16,12 +16,12 @@ const TEXTS = [
   },
   {
     title: 'Content Creation Introduction',
-    paragraphs: ['This task is using AI to help with content creation.'],
+    paragraphs: ['The third task is using AI to help with content creation.'],
   },
   {
     title: 'Writing a Recommendation Letter Introduction',
     paragraphs: [
-      'This task is using AI to help with writing a recommendation letter.',
+      'The last task is using AI to help with writing a recommendation letter.',
     ],
   },
 ];

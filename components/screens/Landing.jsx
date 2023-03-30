@@ -12,9 +12,8 @@ export default function Landing() {
           AI and Workforce
         </h1>
         <p className="mx-auto max-w-[640px] text-base leading-loose text-darkBlue sm:text-xl sm:leading-loose md:mb-16">
-          In this study, you will be asked to provide some basic information
-          about yourself as well as perform several tasks that one may normally
-          encounter in a work context using AI.
+          In this study, you will be asked to perform several tasks that one may
+          normally encounter in a work context and respond to a few surveys.
         </p>
         <div className="hidden md:block">
           <ContinueButton
